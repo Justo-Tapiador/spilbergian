@@ -1,0 +1,774 @@
+{
+  "id": "24a42091736c3d7c",
+  "version": "3.0.0",
+  "name": "spilbergian-1782901708631",
+  "create_time": 1782901720321000,
+  "update_time": 1782901720321000,
+  "duration": 60000000,
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "ratio": "16:9"
+  },
+  "tracks": [
+    {
+      "id": "6470f91f-c07f-4a3b-8727-4de8a5221d8e",
+      "type": "video",
+      "segments": [
+        {
+          "id": "c8a96f1e-0a8b-4e62-9010-067ca8fa5ef4",
+          "track_id": "6470f91f-c07f-4a3b-8727-4de8a5221d8e",
+          "type": "video",
+          "source": {
+            "path": "data/projects/spilbergian-1782901708631/video/shot_001_e6a5f970.mp4",
+            "duration": 5000000,
+            "width": 1920,
+            "height": 1080,
+            "fps": 30
+          },
+          "target_timerange": {
+            "start": 0,
+            "duration": 5000000
+          },
+          "source_timerange": {
+            "start": 0,
+            "duration": 5000000
+          },
+          "clip": {
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 0,
+              "keyframes": [
+                {
+                  "time": 0,
+                  "scale": 1
+                },
+                {
+                  "time": 5000000,
+                  "scale": 1.08
+                }
+              ]
+            }
+          },
+          "common_keyframes": [],
+          "reference_id": "shot_001"
+        },
+        {
+          "id": "b2fc78e9-5d2b-4a5b-9a99-92caf7d32845",
+          "track_id": "6470f91f-c07f-4a3b-8727-4de8a5221d8e",
+          "type": "video",
+          "source": {
+            "path": "data/projects/spilbergian-1782901708631/video/shot_002_f807f696.mp4",
+            "duration": 5000000,
+            "width": 1920,
+            "height": 1080,
+            "fps": 30
+          },
+          "target_timerange": {
+            "start": 5000000,
+            "duration": 5000000
+          },
+          "source_timerange": {
+            "start": 0,
+            "duration": 5000000
+          },
+          "clip": {
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 0,
+              "keyframes": []
+            }
+          },
+          "common_keyframes": [],
+          "reference_id": "shot_002"
+        },
+        {
+          "id": "127fc170-1ab2-4bc4-a953-270c9443b48c",
+          "track_id": "6470f91f-c07f-4a3b-8727-4de8a5221d8e",
+          "type": "video",
+          "source": {
+            "path": "data/projects/spilbergian-1782901708631/video/shot_003_329e7080.mp4",
+            "duration": 6000000,
+            "width": 1920,
+            "height": 1080,
+            "fps": 30
+          },
+          "target_timerange": {
+            "start": 10000000,
+            "duration": 6000000
+          },
+          "source_timerange": {
+            "start": 0,
+            "duration": 6000000
+          },
+          "clip": {
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 0,
+              "keyframes": [
+                {
+                  "time": 0,
+                  "scale": 1
+                },
+                {
+                  "time": 6000000,
+                  "scale": 1.08
+                }
+              ]
+            }
+          },
+          "common_keyframes": [],
+          "reference_id": "shot_003"
+        },
+        {
+          "id": "c6e61ee1-e2dd-434c-a610-ed79635673e9",
+          "track_id": "6470f91f-c07f-4a3b-8727-4de8a5221d8e",
+          "type": "video",
+          "source": {
+            "path": "data/projects/spilbergian-1782901708631/video/shot_004_97344e34.mp4",
+            "duration": 6000000,
+            "width": 1920,
+            "height": 1080,
+            "fps": 30
+          },
+          "target_timerange": {
+            "start": 16000000,
+            "duration": 6000000
+          },
+          "source_timerange": {
+            "start": 0,
+            "duration": 6000000
+          },
+          "clip": {
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 0,
+              "keyframes": []
+            }
+          },
+          "common_keyframes": [],
+          "reference_id": "shot_004"
+        },
+        {
+          "id": "ad8826e7-2b1b-407d-bb95-0a8c4b6a4ce7",
+          "track_id": "6470f91f-c07f-4a3b-8727-4de8a5221d8e",
+          "type": "video",
+          "source": {
+            "path": "data/projects/spilbergian-1782901708631/video/shot_005_d166113a.mp4",
+            "duration": 5000000,
+            "width": 1920,
+            "height": 1080,
+            "fps": 30
+          },
+          "target_timerange": {
+            "start": 22000000,
+            "duration": 5000000
+          },
+          "source_timerange": {
+            "start": 0,
+            "duration": 5000000
+          },
+          "clip": {
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 0,
+              "keyframes": [
+                {
+                  "time": 0,
+                  "scale": 1
+                },
+                {
+                  "time": 5000000,
+                  "scale": 1.08
+                }
+              ]
+            }
+          },
+          "common_keyframes": [],
+          "reference_id": "shot_005"
+        },
+        {
+          "id": "5db9a31c-1caf-4602-b8c6-cb3a21258c85",
+          "track_id": "6470f91f-c07f-4a3b-8727-4de8a5221d8e",
+          "type": "video",
+          "source": {
+            "path": "data/projects/spilbergian-1782901708631/video/shot_006_9aa440fb.mp4",
+            "duration": 5000000,
+            "width": 1920,
+            "height": 1080,
+            "fps": 30
+          },
+          "target_timerange": {
+            "start": 27000000,
+            "duration": 5000000
+          },
+          "source_timerange": {
+            "start": 0,
+            "duration": 5000000
+          },
+          "clip": {
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 0,
+              "keyframes": []
+            }
+          },
+          "common_keyframes": [],
+          "reference_id": "shot_006"
+        },
+        {
+          "id": "5c01c543-8816-4a0f-bac9-2c2a63d52a4d",
+          "track_id": "6470f91f-c07f-4a3b-8727-4de8a5221d8e",
+          "type": "video",
+          "source": {
+            "path": "data/projects/spilbergian-1782901708631/video/shot_007_bc37386d.mp4",
+            "duration": 6500000,
+            "width": 1920,
+            "height": 1080,
+            "fps": 30
+          },
+          "target_timerange": {
+            "start": 32000000,
+            "duration": 6500000
+          },
+          "source_timerange": {
+            "start": 0,
+            "duration": 6500000
+          },
+          "clip": {
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 0,
+              "keyframes": [
+                {
+                  "time": 0,
+                  "scale": 1
+                },
+                {
+                  "time": 6500000,
+                  "scale": 1.08
+                }
+              ]
+            }
+          },
+          "common_keyframes": [],
+          "reference_id": "shot_007"
+        },
+        {
+          "id": "30ced4ec-ed56-4422-a315-f4fe73e9c3b3",
+          "track_id": "6470f91f-c07f-4a3b-8727-4de8a5221d8e",
+          "type": "video",
+          "source": {
+            "path": "data/projects/spilbergian-1782901708631/video/shot_008_78d30fae.mp4",
+            "duration": 6500000,
+            "width": 1920,
+            "height": 1080,
+            "fps": 30
+          },
+          "target_timerange": {
+            "start": 38500000,
+            "duration": 6500000
+          },
+          "source_timerange": {
+            "start": 0,
+            "duration": 6500000
+          },
+          "clip": {
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 0,
+              "keyframes": []
+            }
+          },
+          "common_keyframes": [],
+          "reference_id": "shot_008"
+        },
+        {
+          "id": "b8fa42f0-c74b-4136-9397-41eb6064a535",
+          "track_id": "6470f91f-c07f-4a3b-8727-4de8a5221d8e",
+          "type": "video",
+          "source": {
+            "path": "data/projects/spilbergian-1782901708631/video/shot_009_ef9895c9.mp4",
+            "duration": 7500000,
+            "width": 1920,
+            "height": 1080,
+            "fps": 30
+          },
+          "target_timerange": {
+            "start": 45000000,
+            "duration": 7500000
+          },
+          "source_timerange": {
+            "start": 0,
+            "duration": 7500000
+          },
+          "clip": {
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 0,
+              "keyframes": [
+                {
+                  "time": 0,
+                  "scale": 1
+                },
+                {
+                  "time": 7500000,
+                  "scale": 1.08
+                }
+              ]
+            }
+          },
+          "common_keyframes": [],
+          "reference_id": "shot_009"
+        },
+        {
+          "id": "2c7575c1-37db-489d-930b-deb6300bb9c1",
+          "track_id": "6470f91f-c07f-4a3b-8727-4de8a5221d8e",
+          "type": "video",
+          "source": {
+            "path": "data/projects/spilbergian-1782901708631/video/shot_010_f246057d.mp4",
+            "duration": 7500000,
+            "width": 1920,
+            "height": 1080,
+            "fps": 30
+          },
+          "target_timerange": {
+            "start": 52500000,
+            "duration": 7500000
+          },
+          "source_timerange": {
+            "start": 0,
+            "duration": 7500000
+          },
+          "clip": {
+            "transform": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 0,
+              "keyframes": []
+            }
+          },
+          "common_keyframes": [],
+          "reference_id": "shot_010"
+        }
+      ],
+      "attributes": 0
+    },
+    {
+      "id": "c811cfa6-ac2f-416d-910e-5bf46871200b",
+      "type": "audio",
+      "segments": [
+        {
+          "id": "3f82ca51-fa86-4b68-bd55-74d76adb0d23",
+          "track_id": "c811cfa6-ac2f-416d-910e-5bf46871200b",
+          "type": "audio",
+          "source": {
+            "path": "data/projects/spilbergian-1782901708631/audio/voiceover_01.mp3",
+            "duration": 5000000
+          },
+          "target_timerange": {
+            "start": 0,
+            "duration": 5000000
+          },
+          "source_timerange": {
+            "start": 0,
+            "duration": 5000000
+          },
+          "clip": {
+            "volume": 1
+          }
+        },
+        {
+          "id": "6a128978-5402-4a36-88d5-078a0eccf5df",
+          "track_id": "c811cfa6-ac2f-416d-910e-5bf46871200b",
+          "type": "audio",
+          "source": {
+            "path": "data/projects/spilbergian-1782901708631/audio/voiceover_02.mp3",
+            "duration": 5000000
+          },
+          "target_timerange": {
+            "start": 5000000,
+            "duration": 5000000
+          },
+          "source_timerange": {
+            "start": 0,
+            "duration": 5000000
+          },
+          "clip": {
+            "volume": 1
+          }
+        },
+        {
+          "id": "639fa8a1-e9d5-46d0-8296-289ffd645d35",
+          "track_id": "c811cfa6-ac2f-416d-910e-5bf46871200b",
+          "type": "audio",
+          "source": {
+            "path": "data/projects/spilbergian-1782901708631/audio/voiceover_03.mp3",
+            "duration": 5000000
+          },
+          "target_timerange": {
+            "start": 10000000,
+            "duration": 5000000
+          },
+          "source_timerange": {
+            "start": 0,
+            "duration": 5000000
+          },
+          "clip": {
+            "volume": 1
+          }
+        },
+        {
+          "id": "d0d7186e-7c7b-466e-ae40-2eb4487428e1",
+          "track_id": "c811cfa6-ac2f-416d-910e-5bf46871200b",
+          "type": "audio",
+          "source": {
+            "path": "data/projects/spilbergian-1782901708631/audio/voiceover_04.mp3",
+            "duration": 5000000
+          },
+          "target_timerange": {
+            "start": 15000000,
+            "duration": 5000000
+          },
+          "source_timerange": {
+            "start": 0,
+            "duration": 5000000
+          },
+          "clip": {
+            "volume": 1
+          }
+        },
+        {
+          "id": "ec85699c-6d98-40b1-972f-eddbca8039be",
+          "track_id": "c811cfa6-ac2f-416d-910e-5bf46871200b",
+          "type": "audio",
+          "source": {
+            "path": "data/projects/spilbergian-1782901708631/audio/voiceover_05.mp3",
+            "duration": 5000000
+          },
+          "target_timerange": {
+            "start": 20000000,
+            "duration": 5000000
+          },
+          "source_timerange": {
+            "start": 0,
+            "duration": 5000000
+          },
+          "clip": {
+            "volume": 1
+          }
+        }
+      ],
+      "attributes": 0
+    },
+    {
+      "id": "54889166-868a-44bc-8094-e8aad60fffed",
+      "type": "audio",
+      "segments": [
+        {
+          "id": "241d3ce2-2275-46ee-bc57-4ca5be1474dd",
+          "track_id": "54889166-868a-44bc-8094-e8aad60fffed",
+          "type": "audio",
+          "source": {
+            "path": "data/projects/spilbergian-1782901708631/audio/soundtrack.mp3",
+            "duration": 60000000
+          },
+          "target_timerange": {
+            "start": 0,
+            "duration": 60000000
+          },
+          "source_timerange": {
+            "start": 0,
+            "duration": 60000000
+          },
+          "clip": {
+            "volume": 0.5
+          }
+        }
+      ],
+      "attributes": 0
+    }
+  ],
+  "transitions": [
+    {
+      "id": "8f82cc5d-a750-4363-9dd5-44b7c168eac1",
+      "type": "transition",
+      "transition_type": "fade",
+      "duration": 500000,
+      "position": 5000000
+    },
+    {
+      "id": "7c8e08b2-57d7-4852-bb08-db65c661ccaa",
+      "type": "transition",
+      "transition_type": "fade",
+      "duration": 500000,
+      "position": 10000000
+    },
+    {
+      "id": "f01e55af-1108-4fd0-84d0-250b385a8051",
+      "type": "transition",
+      "transition_type": "fade",
+      "duration": 500000,
+      "position": 16000000
+    },
+    {
+      "id": "69bc2cc2-6a82-4813-83a4-2d9840c65cdd",
+      "type": "transition",
+      "transition_type": "fade",
+      "duration": 500000,
+      "position": 22000000
+    },
+    {
+      "id": "db7d5efc-c9a1-4c7e-a541-2f3f176a16ed",
+      "type": "transition",
+      "transition_type": "fade",
+      "duration": 500000,
+      "position": 27000000
+    },
+    {
+      "id": "bc8ffd5b-202c-4f0f-912d-93ef09c3c77e",
+      "type": "transition",
+      "transition_type": "fade",
+      "duration": 500000,
+      "position": 32000000
+    },
+    {
+      "id": "af9b0be7-782d-4a88-95e5-2cbb94a11d3b",
+      "type": "transition",
+      "transition_type": "fade",
+      "duration": 500000,
+      "position": 38500000
+    },
+    {
+      "id": "dbd8580a-8105-4f6b-b6e0-cec4368656de",
+      "type": "transition",
+      "transition_type": "fade",
+      "duration": 500000,
+      "position": 45000000
+    },
+    {
+      "id": "5486f8f9-575f-4062-8083-d35f07841e38",
+      "type": "transition",
+      "transition_type": "fade",
+      "duration": 500000,
+      "position": 52500000
+    }
+  ],
+  "effects": [
+    {
+      "id": "1534adae-ee83-46de-8eb3-9d75aac3a9de",
+      "type": "adjustment",
+      "target_segment_id": "c8a96f1e-0a8b-4e62-9010-067ca8fa5ef4",
+      "parameters": {
+        "brightness": 0,
+        "contrast": 0,
+        "saturation": 0,
+        "temperature": 0,
+        "tint": 0
+      }
+    },
+    {
+      "id": "ec6c2da1-98e6-41ff-9ecd-ceeec622328b",
+      "type": "adjustment",
+      "target_segment_id": "b2fc78e9-5d2b-4a5b-9a99-92caf7d32845",
+      "parameters": {
+        "brightness": 0,
+        "contrast": 0,
+        "saturation": 0,
+        "temperature": 0,
+        "tint": 0
+      }
+    },
+    {
+      "id": "e62245bc-009b-4bd4-93dc-c7ec821caa68",
+      "type": "adjustment",
+      "target_segment_id": "127fc170-1ab2-4bc4-a953-270c9443b48c",
+      "parameters": {
+        "brightness": 0,
+        "contrast": 0,
+        "saturation": 0,
+        "temperature": 0,
+        "tint": 0
+      }
+    },
+    {
+      "id": "e0a4607e-09b0-42ff-9b9d-b5fecf98b38b",
+      "type": "adjustment",
+      "target_segment_id": "c6e61ee1-e2dd-434c-a610-ed79635673e9",
+      "parameters": {
+        "brightness": 0,
+        "contrast": 0,
+        "saturation": 0,
+        "temperature": 0,
+        "tint": 0
+      }
+    },
+    {
+      "id": "270aa110-5760-40ac-bf83-4f1f2e28ebb5",
+      "type": "adjustment",
+      "target_segment_id": "ad8826e7-2b1b-407d-bb95-0a8c4b6a4ce7",
+      "parameters": {
+        "brightness": 0,
+        "contrast": 0,
+        "saturation": 0,
+        "temperature": 0,
+        "tint": 0
+      }
+    },
+    {
+      "id": "f5dfb43f-5170-4bed-9646-adeaa563520c",
+      "type": "adjustment",
+      "target_segment_id": "5db9a31c-1caf-4602-b8c6-cb3a21258c85",
+      "parameters": {
+        "brightness": 0,
+        "contrast": 0,
+        "saturation": 0,
+        "temperature": 0,
+        "tint": 0
+      }
+    },
+    {
+      "id": "a89cf872-b833-4703-9003-52e0162d1571",
+      "type": "adjustment",
+      "target_segment_id": "5c01c543-8816-4a0f-bac9-2c2a63d52a4d",
+      "parameters": {
+        "brightness": 0,
+        "contrast": 0,
+        "saturation": 0,
+        "temperature": 0,
+        "tint": 0
+      }
+    },
+    {
+      "id": "e99e1c80-333f-455a-bfd2-1dfab8ac55a9",
+      "type": "adjustment",
+      "target_segment_id": "30ced4ec-ed56-4422-a315-f4fe73e9c3b3",
+      "parameters": {
+        "brightness": 0,
+        "contrast": 0,
+        "saturation": 0,
+        "temperature": 0,
+        "tint": 0
+      }
+    },
+    {
+      "id": "eb59fac8-e350-4231-ae6f-091a12179643",
+      "type": "adjustment",
+      "target_segment_id": "b8fa42f0-c74b-4136-9397-41eb6064a535",
+      "parameters": {
+        "brightness": 0,
+        "contrast": 0,
+        "saturation": 0,
+        "temperature": 0,
+        "tint": 0
+      }
+    },
+    {
+      "id": "0dcd0ed9-d3ee-4bcf-a6fc-099b5c38faca",
+      "type": "adjustment",
+      "target_segment_id": "2c7575c1-37db-489d-930b-deb6300bb9c1",
+      "parameters": {
+        "brightness": 0,
+        "contrast": 0,
+        "saturation": 0,
+        "temperature": 0,
+        "tint": 0
+      }
+    }
+  ],
+  "materials": {
+    "videos": [
+      {
+        "id": "c8a96f1e-0a8b-4e62-9010-067ca8fa5ef4",
+        "path": "data/projects/spilbergian-1782901708631/video/shot_001_e6a5f970.mp4"
+      },
+      {
+        "id": "b2fc78e9-5d2b-4a5b-9a99-92caf7d32845",
+        "path": "data/projects/spilbergian-1782901708631/video/shot_002_f807f696.mp4"
+      },
+      {
+        "id": "127fc170-1ab2-4bc4-a953-270c9443b48c",
+        "path": "data/projects/spilbergian-1782901708631/video/shot_003_329e7080.mp4"
+      },
+      {
+        "id": "c6e61ee1-e2dd-434c-a610-ed79635673e9",
+        "path": "data/projects/spilbergian-1782901708631/video/shot_004_97344e34.mp4"
+      },
+      {
+        "id": "ad8826e7-2b1b-407d-bb95-0a8c4b6a4ce7",
+        "path": "data/projects/spilbergian-1782901708631/video/shot_005_d166113a.mp4"
+      },
+      {
+        "id": "5db9a31c-1caf-4602-b8c6-cb3a21258c85",
+        "path": "data/projects/spilbergian-1782901708631/video/shot_006_9aa440fb.mp4"
+      },
+      {
+        "id": "5c01c543-8816-4a0f-bac9-2c2a63d52a4d",
+        "path": "data/projects/spilbergian-1782901708631/video/shot_007_bc37386d.mp4"
+      },
+      {
+        "id": "30ced4ec-ed56-4422-a315-f4fe73e9c3b3",
+        "path": "data/projects/spilbergian-1782901708631/video/shot_008_78d30fae.mp4"
+      },
+      {
+        "id": "b8fa42f0-c74b-4136-9397-41eb6064a535",
+        "path": "data/projects/spilbergian-1782901708631/video/shot_009_ef9895c9.mp4"
+      },
+      {
+        "id": "2c7575c1-37db-489d-930b-deb6300bb9c1",
+        "path": "data/projects/spilbergian-1782901708631/video/shot_010_f246057d.mp4"
+      }
+    ],
+    "audios": [
+      {
+        "id": "241d3ce2-2275-46ee-bc57-4ca5be1474dd",
+        "path": "data/projects/spilbergian-1782901708631/audio/soundtrack.mp3"
+      },
+      {
+        "id": "3f82ca51-fa86-4b68-bd55-74d76adb0d23",
+        "path": "data/projects/spilbergian-1782901708631/audio/voiceover_01.mp3"
+      },
+      {
+        "id": "6a128978-5402-4a36-88d5-078a0eccf5df",
+        "path": "data/projects/spilbergian-1782901708631/audio/voiceover_02.mp3"
+      },
+      {
+        "id": "639fa8a1-e9d5-46d0-8296-289ffd645d35",
+        "path": "data/projects/spilbergian-1782901708631/audio/voiceover_03.mp3"
+      },
+      {
+        "id": "d0d7186e-7c7b-466e-ae40-2eb4487428e1",
+        "path": "data/projects/spilbergian-1782901708631/audio/voiceover_04.mp3"
+      },
+      {
+        "id": "ec85699c-6d98-40b1-972f-eddbca8039be",
+        "path": "data/projects/spilbergian-1782901708631/audio/voiceover_05.mp3"
+      }
+    ]
+  },
+  "meta": {
+    "generator": "Spilbergian v3.0",
+    "planId": "6791e061-abea-4eda-8b24-8898d0cba58b",
+    "brief": "Un astronauta descubre una flor creciendo en Marte",
+    "genre": "sci-fi"
+  }
+}

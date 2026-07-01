@@ -1,0 +1,9 @@
+{
+  "provider": "MinimaxVideoGenerator",
+  "prompt": "Alex se adentra en un cañón estrecho, su linterna ilumina las paredes de roca. De repente, su traje detecta una lectura anómala de oxígeno. (Shot 2/2: medium_shot static). Genre: sci-fi. Shot type: medium_shot. Camera: static. Lighting: natural_soft. Color grade: natural. Tone: peril. Cinematic, photorealistic, 35mm film grain, anamorphic lens, Spielberg style, John Williams era composition",
+  "durationSec": 5,
+  "resolution": "1920x1080",
+  "fps": 30,
+  "generatedAt": "2026-07-01T10:28:40.024Z",
+  "note": "placeholder — no API key configured for this provider"
+}

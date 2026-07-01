@@ -1,0 +1,297 @@
+{
+  "agent": {
+    "version": "3.0.0",
+    "codename": "Spilbergian",
+    "specialty": "cinematic_video_creation",
+    "dModel": 128,
+    "nHeads": 8,
+    "dFF": 512,
+    "maxSteps": 500,
+    "creativeTemperature": 0.85,
+    "directorialStyle": "spielberg"
+  },
+  "persona": {
+    "name": "Spilbergian",
+    "inspiration": "Steven Spielberg",
+    "signatureTechniques": [
+      "long_take_suspense",
+      "wide_eyed_wonder",
+      "silhouette_against_sky",
+      "amber_glowing_backlight",
+      "child_pov",
+      "spielberg_face",
+      "oners_with_motivated_movement",
+      "john_williams_swelling_score",
+      "machine_pov_reveal",
+      "family_centred_stakes"
+    ],
+    "preferredGenres": ["adventure", "sci-fi", "family", "wonder", "historical_drama"],
+    "narrativeBeats": [
+      "ordinary_world",
+      "inciting_incident",
+      "reluctant_hero",
+      "threshold_crossing",
+      "rising_action",
+      "midpoint_reversal",
+      "dark_night_of_soul",
+      "climactic_showdown",
+      "resolution_and_wonder"
+    ],
+    "toneKeywords": ["awe", "hope", "peril", "innocence", "wonder", "family", "destiny"],
+    "colorPalette": {
+      "primary":   "#1a1f3a",
+      "secondary": "#f4a261",
+      "accent":    "#e9c46a",
+      "shadow":    "#0d1b2a",
+      "warm":      "#ffb86b"
+    },
+    "pacing": {
+      "defaultCutsPerMinute": 8,
+      "actionCutsPerMinute":  18,
+      "emotionalCutsPerMinute": 4,
+      "minShotMs": 1400,
+      "maxShotMs": 12000
+    }
+  },
+  "ajn": {
+    "betaM": 0.85,
+    "lambdaUp": 0.30,
+    "delta": 0.02,
+    "thetaSat": 0.75,
+    "tau": 20,
+    "eta": 0.05,
+    "praximDim": 128,
+    "creativeBoost": 0.15
+  },
+  "budget": {
+    "defaultTokens": 200000,
+    "defaultEnergy": 2.0,
+    "defaultWallClockMs": 3600000,
+    "maxConcurrentRenders": 3,
+    "maxConcurrentAudioJobs": 4
+  },
+  "cascade": {
+    "rhoWarn": 0.35,
+    "rhoModerate": 0.50,
+    "rhoCritical": 0.65,
+    "pollMs": 500,
+    "selfHealing": true
+  },
+  "memory": {
+    "storageDir": "./data/memory",
+    "maxEpisodic": 5000,
+    "maxWorking": 25,
+    "enablePersistence": true,
+    "rememberSuccessfulRenders": true,
+    "rememberStyleAdherence": true
+  },
+  "safety": {
+    "safetyLevel": "standard",
+    "protectedPaths": ["/etc", "/root", "/sys", "/proc"],
+    "maxFileSize": 2147483648,
+    "rateLimits": {
+      "perMinute": 60,
+      "perHour": 500,
+      "videoRendersPerDay": 50,
+      "audioJobsPerDay": 100,
+      "youtubeUploadsPerDay": 6
+    },
+    "contentFilter": {
+      "blockExplicit": false,
+      "blockViolent": false,
+      "blockCopyrighted": true,
+      "requireLicenseClearance": true
+    }
+  },
+  "training": {
+    "epochsI": 15,
+    "epochsII_T1": 8,
+    "epochsII_T2": 8,
+    "epochsII_T3": 8,
+    "epochsIII": 12,
+    "epochsIV": 10,
+    "epochsCinematic": 20,
+    "epochsStyleReward": 15,
+    "batchSize": 16,
+    "enableCheckpoints": true,
+    "earlyStoppingPatience": 7,
+    "datasets": {
+      "scenesDir": "./data/training/scenes",
+      "scriptsDir": "./data/training/scripts",
+      "storyboardsDir": "./data/training/storyboards"
+    },
+    "augmentScenes": true,
+    "augmentAudio": true,
+    "augmentScripts": true
+  },
+  "tools": {
+    "timeout": 60000,
+    "maxRetries": 3,
+    "maxConcurrent": 5
+  },
+  "llm": {
+    "provider": "openai",
+    "model": "glm-4.6",
+    "temperature": 0.85,
+    "maxTokens": 8192,
+    "systemPrompt": "You are Spilbergian, a cinematic AI director in the tradition of Steven Spielberg. You think in shots, beats, and emotion. You always start from story first, then escalate to spectacle."
+  },
+  "video": {
+    "defaultResolution": "1920x1080",
+    "defaultFps": 30,
+    "defaultAspectRatio": "16:9",
+    "verticalAspectRatio": "9:16",
+    "defaultDuration": 8,
+    "maxDuration": 60,
+    "providers": {
+      "minimax": {
+        "enabled": true,
+        "priority": 1,
+        "endpoint": "https://api.minimax.chat/v1/video_generation",
+        "model": "video-01",
+        "defaultResolution": "1280x720"
+      },
+      "meta": {
+        "enabled": true,
+        "priority": 2,
+        "endpoint": "https://api.meta.ai/v1/movie-gen",
+        "model": "movie-gen-2",
+        "defaultResolution": "1920x1080"
+      },
+      "kling": {
+        "enabled": true,
+        "priority": 3,
+        "endpoint": "https://api.kuaishoux.com/v1/kling/video",
+        "model": "kling-v2",
+        "defaultResolution": "1920x1080"
+      },
+      "runway": {
+        "enabled": false,
+        "priority": 4,
+        "endpoint": "https://api.runwayml.com/v1/generate",
+        "model": "gen-3-alpha",
+        "defaultResolution": "1920x1080"
+      },
+      "pika": {
+        "enabled": false,
+        "priority": 5,
+        "endpoint": "https://api.pika.art/v1/generate",
+        "model": "pika-1.5",
+        "defaultResolution": "1280x720"
+      }
+    },
+    "fallbackStrategy": "priority_then_cost",
+    "cacheGeneratedClips": true,
+    "cacheDir": "./data/assets/video"
+  },
+  "audio": {
+    "defaultSampleRate": 44100,
+    "defaultFormat": "mp3",
+    "defaultBitrate": "256k",
+    "providers": {
+      "udio": {
+        "enabled": true,
+        "priority": 1,
+        "endpoint": "https://api.udio.com/v1/generate",
+        "defaultDuration": 30,
+        "specialty": "soundtrack"
+      },
+      "suno": {
+        "enabled": true,
+        "priority": 2,
+        "endpoint": "https://api.suno.ai/v1/generate",
+        "defaultDuration": 30,
+        "specialty": "soundtrack"
+      },
+      "elevenlabs": {
+        "enabled": true,
+        "priority": 1,
+        "endpoint": "https://api.elevenlabs.io/v1/text-to-speech",
+        "model": "eleven_turbo_v2",
+        "specialty": "voiceover_and_sfx",
+        "defaultVoice": "Adam"
+      }
+    },
+    "voiceProfiles": {
+      "narrator_warm":     { "voice": "Adam",   "stability": 0.55, "similarity": 0.75, "style": 0.35 },
+      "narrator_grandpa":  { "voice": "Antoni", "stability": 0.65, "similarity": 0.80, "style": 0.45 },
+      "character_child":   { "voice": "Bella",  "stability": 0.45, "similarity": 0.70, "style": 0.55 },
+      "character_villain": { "voice": "Arnold", "stability": 0.75, "similarity": 0.85, "style": 0.65 },
+      "character_ally":    { "voice": "Josh",   "stability": 0.60, "similarity": 0.78, "style": 0.40 },
+      "news_anchor":       { "voice": "Rachel", "stability": 0.70, "similarity": 0.80, "style": 0.25 }
+    },
+    "cacheGeneratedAudio": true,
+    "cacheDir": "./data/assets/audio"
+  },
+  "editor": {
+    "engine": "capcut",
+    "capcut": {
+      "draftDir": "./data/projects/capcut_drafts",
+      "exportDir": "./data/projects/renders",
+      "capcutCliPath": "/opt/capcut/cli",
+      "capcutDesktopProjectDir": "%USERPROFILE%/AppData/Local/CapCut/User Data/Projects/com.lveditor.draft",
+      "defaultExportResolution": "1920x1080",
+      "defaultExportFps": 30,
+      "defaultExportBitrate": "8M",
+      "autoOpenInCapCut": false,
+      "templateDir": "./data/projects/capcut_templates"
+    },
+    "ffmpegFallback": true,
+    "ffmpegPath": "ffmpeg"
+  },
+  "voice": {
+    "whisper": {
+      "enabled": true,
+      "model": "base",
+      "language": "es",
+      "device": "auto",
+      "sampleRate": 16000,
+      "vad": {
+        "enabled": true,
+        "threshold": 0.5,
+        "minSilenceMs": 700,
+        "maxSpeechMs": 30000
+      },
+      "hotwords": [
+        "Spilbergian", "crea un video", "haz un video", "make a movie",
+        "sube a YouTube", "render", "edita con CapCut", "_STOP_"
+      ]
+    },
+    "wakeWord": "Spilbergian",
+    "commandMode": "continuous",
+    "microphone": {
+      "device": "default",
+      "channels": 1
+    }
+  },
+  "youtube": {
+    "channelId": "",
+    "channelName": "",
+    "defaultPrivacy": "private",
+    "defaultCategory": "24",
+    "defaultTags": ["Spilbergian", "AI Director", "Predator Jungle v3"],
+    "defaultLanguage": "es",
+    "defaultDescription": "Video generado por Spilbergian, agente de IA cinematográfico de PREDATOR JUNGLE v3.0 basado en el framework AJN de Justo Tapiador García (UA).",
+    "publishSchedule": {
+      "frequency": "weekly",
+      "preferredDay": "friday",
+      "preferredTime": "18:00",
+      "timezone": "Europe/Madrid"
+    },
+    "thumbnails": {
+      "autoGenerate": true,
+      "style": "spielberg_wonder_face",
+      "size": "1280x720"
+    },
+    "credentialsFile": "./data/youtube/credentials.json",
+    "tokenFile": "./data/youtube/token.json"
+  },
+  "logging": {
+    "level": "info",
+    "enableConsole": true,
+    "enableFile": true,
+    "fileDir": "./data/logs",
+    "enableAudit": true,
+    "auditFile": "./data/logs/audit.jsonl"
+  }
+}

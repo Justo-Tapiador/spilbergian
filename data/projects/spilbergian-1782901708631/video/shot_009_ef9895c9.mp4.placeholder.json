@@ -1,0 +1,9 @@
+{
+  "provider": "MinimaxVideoGenerator",
+  "prompt": "Alex se arrodilla lentamente, extendiendo una mano temblorosa hacia la flor. Cuando sus dedos rozan los pétalos, la flor emite un pulso de luz que viaja por el traje del astronauta. En el cielo, las estrellas brillan intensamente, como si celebraran este descubrimiento. (Shot 1/2: wide_shot slow_push_in). Genre: sci-fi. Shot type: wide_shot. Camera: slow_push_in. Lighting: natural_soft. Color grade: natural. Tone: awe. Cinematic, photorealistic, 35mm film grain, anamorphic lens, Spielberg style, John Williams era composition",
+  "durationSec": 8,
+  "resolution": "1920x1080",
+  "fps": 30,
+  "generatedAt": "2026-07-01T10:28:40.024Z",
+  "note": "placeholder — no API key configured for this provider"
+}

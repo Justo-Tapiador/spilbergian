@@ -1,0 +1,102 @@
+{
+  "name": "predator-jungle-agent",
+  "version": "3.0.0",
+  "description": "PREDATOR JUNGLE v3.0 'Spilbergian' — A Deep Agentic AI System specialized in autonomous cinematic video creation, built on the Artificial Junky Neuron (AJN) framework by Justo Tapiador García (UA). v3.0 integrates CapCut editing, Udio/Suno/ElevenLabs audio generation, Meta/Minimax video generation, Whisper voice commands, and YouTube publishing.",
+  "main": "src/index.js",
+  "type": "module",
+  "bin": {
+    "spilbergian": "./scripts/cli.js",
+    "predator": "./scripts/cli.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "cli": "node scripts/cli.js",
+    "voice": "node scripts/voice-cli.js",
+    "make-movie": "node scripts/make-movie.js",
+    "web": "node web/server.js",
+    "test": "node --experimental-vm-modules tests/spilbergian.test.js",
+    "demo": "node scripts/cli.js demo",
+    "train": "node scripts/train-spilbergian.js",
+    "train:scenes": "node scripts/train-spilbergian.js --phase scenes",
+    "train:scripts": "node scripts/train-spilbergian.js --phase scripts",
+    "train:audio": "node scripts/train-spilbergian.js --phase audio",
+    "train:edit": "node scripts/train-spilbergian.js --phase editing",
+    "train:all": "node scripts/train-spilbergian.js --phase all",
+    "benchmark": "node scripts/benchmark.js",
+    "checkpoint": "node scripts/cli.js checkpoint",
+    "youtube:upload": "node scripts/youtube-upload.js",
+    "youtube:auth": "node scripts/youtube-upload.js --auth",
+    "docker:build": "docker build -t spilbergian-v3 -f docker/Dockerfile .",
+    "docker:run": "docker run -p 3000:3000 -v $(pwd)/data:/app/data --env-file .env spilbergian-v3"
+  },
+  "keywords": [
+    "ai",
+    "artificial-intelligence",
+    "agentic-ai",
+    "junky-neuron",
+    "AJN",
+    "deep-agentic-flow",
+    "autonomous-agent",
+    "reinforcement-learning",
+    "predator",
+    "spilbergian",
+    "spielberg",
+    "video-generation",
+    "youtube-automation",
+    "capcut",
+    "udio",
+    "suno",
+    "elevenlabs",
+    "minimax",
+    "meta-movie-gen",
+    "whisper",
+    "cinematic-ai",
+    "movie-director",
+    "creative-ai"
+  ],
+  "author": {
+    "name": "Based on Agentic Theory by Justo Tapiador García",
+    "affiliation": "Universidad de Alicante (UA)",
+    "url": "https://github.com/Justo-Tapiador/predator-jungle-agent",
+    "email": "justo.tapiador@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^12.0.0",
+    "chalk": "^5.3.0",
+    "ora": "^8.0.1",
+    "inquirer": "^9.2.15",
+    "express": "^4.18.3",
+    "ws": "^8.16.0",
+    "uuid": "^9.0.0",
+    "mathjs": "^13.0.0",
+    "eventemitter3": "^5.0.1",
+    "pino": "^9.0.0",
+    "pino-pretty": "^11.0.0",
+    "dotenv": "^16.4.5",
+    "axios": "^1.6.8",
+    "zod": "^3.23.0",
+    "z-ai-web-dev-sdk": "latest",
+    "fluent-ffmpeg": "^2.1.3",
+    "ffmpeg-static": "^5.2.0",
+    "ffprobe-static": "^3.1.0",
+    "googleapis": "^144.0.0",
+    "openai": "^4.85.0",
+    "form-data": "^4.0.2",
+    "mime-types": "^2.1.35",
+    "sharp": "^0.33.5",
+    "node-cron": "^3.0.3",
+    "elevenlabs": "^1.55.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "eslint": "^8.57.0"
+  },
+  "optionalDependencies": {
+    "better-sqlite3": "^11.8.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

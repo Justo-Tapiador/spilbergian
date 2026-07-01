@@ -13,8 +13,7 @@
 ---
 
 <div align="center">
-<img src="https://github.com/Justo-Tapiador/spilbergian/blob/main/web/public/spilbergian-1.png?raw=true" alt="Spilbergian — AI Cinematic Director" width="320"/>
-
+<h1>Spilbergian — AI Cinematic Director </h1>
 🎬 **"Spilbergian doesn't just create videos — it directs them."** 🎬
 
 <i>It thinks in shots, in beats, in emotions. Its single goal is to make the audience feel something — and to make them feel it the way Spielberg would have filmed it.</i>
@@ -23,7 +22,7 @@
 </div>
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/justo-tapiador/spilbergian/main/web/public/spilbergian-1.png" alt="Spilbergian — AI Cinematic Director""  width="512"/>
+<img src="https://raw.githubusercontent.com/justo-tapiador/spilbergian/main/web/public/spilbergian-1.png" alt="Spilbergian — AI Cinematic Director""  width="640"/>
 </div>
 ---
 

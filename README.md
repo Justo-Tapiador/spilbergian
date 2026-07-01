@@ -23,7 +23,7 @@
 </div>
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/justo-tapiador/spilbergian/spilbergian-1.jpg" alt="Train me Please!"  width="512"/>
+<img src="https://raw.githubusercontent.com/justo-tapiador/spilbergian/main/web/public/spilbergian-1.jpg" alt="Train me Please!"  width="512"/>
 </div>
 ---
 

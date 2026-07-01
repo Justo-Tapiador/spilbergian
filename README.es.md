@@ -13,6 +13,7 @@
 ---
 
 <div align="center">
+<h1>Spilbergian — es una AI Director Cinematográfico </h1>
 <i><b>"Spilbergian</b> no solo crea videos: los <b>dirige</b>. Piensa en planos, en compases, en emociones. Su único objetivo es que el espectador sienta algo —y lo sienta de la manera en que Spielberg lo habría filmado."</i><p></p>
 </div>
 

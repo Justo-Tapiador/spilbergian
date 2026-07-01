@@ -20,6 +20,7 @@
 
 `ACTION!` 🎞️
 </div>
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/dce59cef-df12-4af9-87fd-ca7792e56ab6" />
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/justo-tapiador/spilbergian/main/web/public/spilbergian-1.png" alt="Spilbergian — AI Cinematic Director""  width="640"/>

@@ -13,7 +13,7 @@
 ---
 
 <div align="center">
-<img src="web/public/spilbergian-mascot.png" alt="Spilbergian — AI Cinematic Director" width="320"/>
+<img src="https://github.com/Justo-Tapiador/spilbergian/blob/main/web/public/spilbergian-1.png?raw=true" alt="Spilbergian — AI Cinematic Director" width="320"/>
 
 🎬 **"Spilbergian doesn't just create videos — it directs them."** 🎬
 

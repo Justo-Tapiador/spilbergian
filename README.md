@@ -14,7 +14,7 @@
 
 <div align="center">
 <h1>Spilbergian — AI Cinematic Director </h1>
-🎬 **"Spilbergian doesn't just create videos — it directs them."** 🎬
+<h2>🎬 Spilbergian doesn't just create videos — it directs them.🎬</h2>
 
 <i>It thinks in shots, in beats, in emotions. Its single goal is to make the audience feel something — and to make them feel it the way Spielberg would have filmed it.</i>
 

@@ -2,130 +2,135 @@
 
 ### Praxic Reinforcement and Extinction-Driven Agentic Task Orchestrator and Realizer — Cinematic Director Edition
 
-> Un agente de IA cinematográfico autónomo construido sobre el framework **Artificial Junky Neuron (AJN)** por **Justo Tapiador García (UA)**.
-> v3.0 transforma a PREDATOR en un **director de cine virtual estilo Steven Spielberg** que genera, edita y publica videos completos en YouTube sin intervención humana.
+> An autonomous cinematic AI agent built on the **Artificial Junky Neuron (AJN)** framework by **Justo Tapiador García (UA)**.
+> v3.0 transforms PREDATOR into a **virtual film director in the style of Steven Spielberg** that generates, edits, and publishes complete videos to YouTube without human intervention.
 
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-3.0.0-blue)](https://github.com/Justo-Tapiador/predator-jungle-agent)
+[![Version](https://img.shields.io/badge/version-3.0.0-blue)](https://github.com/Justo-Tapiador/splibergian)
 [![Codename](https://img.shields.io/badge/codename-Spilbergian-magenta)](#)
 
 ---
 
 <div align="center">
-<h1>Spilbergian — es una AI Director Cinematográfico </h1>
-<i><b>"Spilbergian</b> no solo crea videos: los <b>dirige</b>. Piensa en planos, en compases, en emociones. Su único objetivo es que el espectador sienta algo —y lo sienta de la manera en que Spielberg lo habría filmado."</i><p></p>
+<h1>Spilbergian — AI Cinematic Director </h1>
+<h2>🎬 Spilbergian doesn't just create videos — it directs them.🎬</h2>
+
+<i>It thinks in shots, in beats, in emotions. Its single goal is to make the audience feel something — and to make them feel it the way Spielberg would have filmed it.</i>
+
+`ACTION!` 🎞️
 </div>
+
 
 <div align="center">
 <img src="https://github.com/user-attachments/assets/dce59cef-df12-4af9-87fd-ca7792e56ab6" alt="Spilbergian — AI Cinematic Director""  width="640"/>
 </div>
 ---
 
-## 📑 Tabla de Contenidos
+## 📑 Table of Contents
 
-1. [Novedades en v3.0](#-novedades-en-v30)
-2. [Arquitectura](#-arquitectura)
-3. [Instalación](#-instalación)
-4. [Configuración](#-configuración)
-5. [Guía rápida](#-guía-rápida)
-6. [Modo voz con Whisper](#-modo-voz-con-whisper)
-7. [Pipeline cinematográfico](#-pipeline-cinematográfico)
-8. [Generación de video](#-generación-de-video-meta--minimax--kling--runway--pika)
-9. [Generación de audio](#-generación-de-audio-udio--suno--elevenlabs)
-10. [Edición con CapCut](#-edición-con-capcut)
-11. [Publicación en YouTube](#-publicación-en-youtube)
-12. [Entrenamiento detallado](#-entrenamiento-detallado)
-13. [API programática](#-api-programática)
-14. [Sistema de plugins](#-sistema-de-plugins)
-15. [Despliegue con Docker](#-despliegue-con-docker)
-16. [Referencias teóricas](#-referencias-teóricas)
-17. [Licencia](#-licencia)
+1. [What's New in v3.0](#-whats-new-in-v30)
+2. [Architecture](#-architecture)
+3. [Installation](#-installation)
+4. [Configuration](#-configuration)
+5. [Quick Start](#-quick-start)
+6. [Voice Mode with Whisper](#-voice-mode-with-whisper)
+7. [Cinematic Pipeline](#-cinematic-pipeline)
+8. [Video Generation](#-video-generation-meta--minimax--kling--runway--pika)
+9. [Audio Generation](#-audio-generation-udio--suno--elevenlabs)
+10. [Editing with CapCut](#-editing-with-capcut)
+11. [Publishing to YouTube](#-publishing-to-youtube)
+12. [Detailed Training](#-detailed-training)
+13. [Programmatic API](#-programmatic-api)
+14. [Plugin System](#-plugin-system)
+15. [Docker Deployment](#-docker-deployment)
+16. [Theoretical References](#-theoretical-references)
+17. [License](#-license)
 
 ---
 
-## 🆕 Novedades en v3.0
+## 🆕 What's New in v3.0
 
-v3.0 es un **salto cualitativo** respecto a v2.0: PREDATOR deja de ser un agente genérico y se especializa como **director cinematográfico autónomo**. Las novedades se agrupan en cinco áreas:
+v3.0 is a **qualitative leap** over v2.0: PREDATOR ceases to be a generic agent and specializes as an **autonomous film director**. The new features are grouped into five areas:
 
-### 1. Personalidad directiva — "Spilbergian"
+### 1. Directorial Persona — "Spilbergian"
 
-| Característica | Descripción |
-|----------------|-------------|
-| **Persona codificada** | Vocabulario, paleta, ritmo de cortes y arcos narrativos extraídos del canon de Steven Spielberg |
-| **9 beat arcs** | `ordinary_world → inciting_incident → reluctant_hero → threshold_crossing → rising_action → midpoint_reversal → dark_night_of_soul → climactic_showdown → resolution_and_wonder` |
-| **Técnicas signature** | Long-take suspense, wide-eyed wonder, silhouette against sky, amber backlight, child POV, Spielberg face, John-Williams swelling score, machine POV reveal |
-| **Style adherence scorer** | Cada plan recibe un score 0..1 de cuán "Spielberg" es, usado como reward en entrenamiento |
+| Feature | Description |
+|---------|-------------|
+| **Encoded persona** | Vocabulary, palette, cut pacing, and narrative arcs extracted from the Steven Spielberg canon |
+| **9-beat arcs** | `ordinary_world → inciting_incident → reluctant_hero → threshold_crossing → rising_action → midpoint_reversal → dark_night_of_soul → climactic_showdown → resolution_and_wonder` |
+| **Signature techniques** | Long-take suspense, wide-eyed wonder, silhouette against sky, amber backlight, child POV, Spielberg face, John-Williams swelling score, machine POV reveal |
+| **Style adherence scorer** | Every plan receives a 0..1 score of how "Spielberg" it is, used as a reward signal during training |
 
-### 2. Pipeline cinematográfico completo
+### 2. Full Cinematic Pipeline
 
-| Etapa | Módulo | Salida |
+| Stage | Module | Output |
 |-------|--------|--------|
 | **Plan** | `CinematicBrain` | script + storyboard + shot list + render prompts |
-| **Render** | `VideoOrchestrator` + 5 providers | clips MP4 por plano |
-| **Audio** | `AudioMixer` (Udio + Suno + ElevenLabs) | soundtrack + voiceover + SFX mezclados |
-| **Edición** | `CapCutController` (CapCut draft + ffmpeg fallback) | MP4 final montado |
-| **Thumbnail** | `ThumbnailGenerator` | PNG 1280×720 estilo wonder-face |
-| **Publicación** | `YouTubeUploader` (OAuth + Data API v3) | video live en YouTube |
+| **Render** | `VideoOrchestrator` + 5 providers | per-shot MP4 clips |
+| **Audio** | `AudioMixer` (Udio + Suno + ElevenLabs) | soundtrack + voiceover + SFX, mixed |
+| **Editing** | `CapCutController` (CapCut draft + ffmpeg fallback) | final assembled MP4 |
+| **Thumbnail** | `ThumbnailGenerator` | 1280×720 PNG in wonder-face style |
+| **Publishing** | `YouTubeUploader` (OAuth + Data API v3) | video live on YouTube |
 
-### 3. Integraciones de generación de video
+### 3. Video Generation Integrations
 
-| Provider | Modelo | Estado por defecto | Coste aprox. |
-|----------|--------|--------------------|--------------|
-| **Minimax** (Hailuo) | `video-01` | habilitado (prioridad 1) | ~$0.10/s 720p |
-| **Meta Movie Gen** | `movie-gen-2` | habilitado (prioridad 2) | ~$0.35/s 1080p |
-| **Kling (Kuaishou)** | `kling-v2` | habilitado (prioridad 3) | ~$0.20/s 1080p |
-| **Runway Gen-3 Alpha** | `gen-3-alpha` | deshabilitado | ~$0.50/s 1080p |
-| **Pika 1.5** | `pika-1.5` | deshabilitado | ~$0.15/s 720p |
+| Provider | Model | Default status | Approx. cost |
+|----------|-------|----------------|--------------|
+| **Minimax** (Hailuo) | `video-01` | enabled (priority 1) | ~$0.10/s 720p |
+| **Meta Movie Gen** | `movie-gen-2` | enabled (priority 2) | ~$0.35/s 1080p |
+| **Kling (Kuaishou)** | `kling-v2` | enabled (priority 3) | ~$0.20/s 1080p |
+| **Runway Gen-3 Alpha** | `gen-3-alpha` | disabled | ~$0.50/s 1080p |
+| **Pika 1.5** | `pika-1.5` | disabled | ~$0.15/s 720p |
 
-`VideoOrchestrator` prueba los providers en orden de prioridad y cae al siguiente ante cualquier fallo, garantizando resiliencia.
+`VideoOrchestrator` tries providers in priority order and falls back to the next on any failure, guaranteeing resilience.
 
-### 4. Generación de audio multi-provider
+### 4. Multi-Provider Audio Generation
 
-| Provider | Especialidad | Estado por defecto |
-|----------|--------------|--------------------|
-| **Udio** | Banda sonora orquestal instrumental | habilitado |
-| **Suno** | Banda sonora (fallback de Udio) | habilitado |
-| **ElevenLabs** | Voiceover multivoz + SFX | habilitado |
+| Provider | Specialty | Default status |
+|----------|-----------|----------------|
+| **Udio** | Instrumental orchestral soundtrack | enabled |
+| **Suno** | Soundtrack (Udio fallback) | enabled |
+| **ElevenLabs** | Multivoice voiceover + SFX | enabled |
 
-Sistema de **perfiles de voz** preconfigurados: `narrator_warm`, `narrator_grandpa`, `character_child`, `character_villain`, `character_ally`, `news_anchor`. Cada perfil ajusta `stability`, `similarity_boost` y `style` según el tono de la escena.
+Pre-configured **voice profile** system: `narrator_warm`, `narrator_grandpa`, `character_child`, `character_villain`, `character_ally`, `news_anchor`. Each profile tunes `stability`, `similarity_boost`, and `style` according to the scene's tone.
 
-### 5. Edición con CapCut
+### 5. Editing with CapCut
 
-Tres mecanismos complementarios según el entorno:
+Three complementary mechanisms depending on the environment:
 
-1. **CapCut Draft JSON** — Genera `draft_content.json` listo para abrir en CapCut Desktop (Windows/macOS). Incluye clips en timeline, transiciones fade, ajustes de color por tono, keyframes para slow push-in.
-2. **CapCut CLI** — Si está instalado el binario `capcut` headless, renderiza sin GUI.
-3. **FFmpeg fallback** — En servidores Linux sin CapCut, `TimelineAssembler` produce un MP4 equivalente con normalización por plano, mezcla audio side-chain y color grade por tono.
+1. **CapCut Draft JSON** — Generates `draft_content.json` ready to open in CapCut Desktop (Windows/macOS). Includes clips on the timeline, fade transitions, per-tone color adjustments, keyframes for slow push-ins.
+2. **CapCut CLI** — If the headless `capcut` binary is installed, renders without a GUI.
+3. **FFmpeg fallback** — On Linux servers without CapCut, `TimelineAssembler` produces an equivalent MP4 with per-shot normalization, side-chain audio mixing, and per-tone color grading.
 
-### 6. Comandos de voz con Whisper
+### 6. Voice Commands with Whisper
 
-`WhisperListener` soporta tres modos:
+`WhisperListener` supports three modes:
 
-| Modo | Comportamiento |
-|------|----------------|
-| `continuous` | Transcribe todo lo que oye, sin filtro |
-| `wake_word` *(default)* | Espera la palabra "Spilbergian" antes de capturar el comando |
-| `push_to_talk` | Graba durante una ventana fija |
+| Mode | Behavior |
+|------|----------|
+| `continuous` | Transcribes everything it hears, no filter |
+| `wake_word` *(default)* | Waits for the word "Spilbergian" before capturing the command |
+| `push_to_talk` | Records for a fixed window |
 
-Motores soportados (en orden de preferencia):
-1. **OpenAI Whisper API** (si `OPENAI_API_KEY` está presente)
-2. **whisper** CLI (instalación local del binario Python)
-3. **whisper.cpp** (instalación local C++)
+Supported engines (in order of preference):
+1. **OpenAI Whisper API** (if `OPENAI_API_KEY` is present)
+2. **whisper** CLI (local Python binary install)
+3. **whisper.cpp** (local C++ install)
 
-Captura de audio vía `sox`/`rec` (cross-platform) o `ffmpeg` como fallback. Detección de silencio (VAD) configurable.
+Audio capture via `sox`/`rec` (cross-platform) or `ffmpeg` as a fallback. Configurable silence detection (VAD).
 
-### 7. Publicación en YouTube
+### 7. YouTube Publishing
 
-- **OAuth 2.0** con token caching (`data/youtube/token.json`)
-- Subida **resumable** con barra de progreso vía `youtube.videos.insert`
-- **Thumbnails automáticos** generados con estilo "wonder face" y título compuesto con `sharp`
-- **Programación de publicaciones** (día + hora preferidos, tz configurable)
-- Listado de últimos uploads para verificación
+- **OAuth 2.0** with token caching (`data/youtube/token.json`)
+- **Resumable** upload with progress bar via `youtube.videos.insert`
+- **Automatic thumbnails** generated in "wonder face" style with title composited via `sharp`
+- **Publication scheduling** (preferred day + time, configurable tz)
+- Listing of recent uploads for verification
 
 ---
 
-## 🧠 Arquitectura
+## 🧠 Architecture
 
 ```
         ┌──────────────────────────────────────────────────────────┐
@@ -195,42 +200,42 @@ Captura de audio vía `sox`/`rec` (cross-platform) o `ffmpeg` como fallback. Det
 
 ---
 
-## 📦 Instalación
+## 📦 Installation
 
-### Requisitos previos
+### Prerequisites
 
-| Software | Versión mínima | Para qué se usa |
-|----------|----------------|-----------------|
-| **Node.js** | 18.0+ | runtime principal |
-| **ffmpeg** | 5.0+ | ensamblado de video (fallback CapCut) |
-| **sox** | 14.4+ | captura de audio para Whisper |
-| **Python 3** | 3.10+ | solo si usas whisper Python CLI |
-| **CapCut Desktop** | 3.x | solo si quieres abrir drafts en GUI |
+| Software | Min version | Used for |
+|----------|-------------|----------|
+| **Node.js** | 18.0+ | main runtime |
+| **ffmpeg** | 5.0+ | video assembly (CapCut fallback) |
+| **sox** | 14.4+ | audio capture for Whisper |
+| **Python 3** | 3.10+ | only if you use the whisper Python CLI |
+| **CapCut Desktop** | 3.x | only if you want to open drafts in the GUI |
 
-### Instalación estándar
+### Standard install
 
 ```bash
-git clone https://github.com/Justo-Tapiador/predator-jungle-agent.git
-cd predator-jungle-agent
-git checkout v3.0        # si está publicada como rama/tag
+git clone https://github.com/Justo-Tapiador/splibergian.git
+cd splibergian
+git checkout v3.0        # if released as a branch/tag
 npm install
-cp .env.example .env     # editar con tus API keys
+cp .env.example .env     # edit with your API keys
 ```
 
-### Verificación rápida
+### Quick verification
 
 ```bash
-# Comprobar que el agente arranca
+# Check the agent boots
 node scripts/cli.js status
 
-# Lanzar los tests de humo
+# Run smoke tests
 npm test
 
-# Sembrar datasets de entrenamiento built-in
+# Seed built-in training datasets
 node scripts/train-spilbergian.js --seed-datasets --phase all --epochs 2
 ```
 
-### Instalación con Docker
+### Installing with Docker
 
 ```bash
 docker build -t spilbergian-v3 -f docker/Dockerfile .
@@ -241,7 +246,7 @@ docker run -it --rm \
   spilbergian-v3 status
 ```
 
-Para desarrollo con Ollama (LLM local) como sidecar:
+For development with Ollama (local LLM) as a sidecar:
 
 ```bash
 docker-compose --profile llm up
@@ -249,47 +254,47 @@ docker-compose --profile llm up
 
 ---
 
-## ⚙️ Configuración
+## ⚙️ Configuration
 
-La configuración sigue el sistema **en capas** heredado de v2.0:
+Configuration follows the **layered system** inherited from v2.0:
 
-1. `config/default.json` — valores por defecto
-2. `config/{NODE_ENV}.json` — overrides por entorno
-3. `.env` — variables de entorno (cargado por `dotenv`)
-4. `process.env` con prefijos `PREDATOR_*` o `SPILBERGIAN_*`
-5. Overrides explícitos pasados al constructor
+1. `config/default.json` — default values
+2. `config/{NODE_ENV}.json` — environment overrides
+3. `.env` — environment variables (loaded by `dotenv`)
+4. `process.env` with `PREDATOR_*` or `SPILBERGIAN_*` prefixes
+5. Explicit overrides passed to the constructor
 
-El resultado se valida con **Zod** (`config/schema.js`). Cualquier campo desconocido o tipo incorrecto provoca un fallo claro al arrancar.
+The result is validated with **Zod** (`config/schema.js`). Any unknown field or wrong type triggers a clear failure at startup.
 
-### Variables de entorno clave
+### Key environment variables
 
-| Variable | Default | Descripción |
+| Variable | Default | Description |
 |----------|---------|-------------|
-| `ZAI_API_KEY` | — | API key para z-ai-web-dev-sdk (LLM + imagen) |
-| `OPENAI_API_KEY` | — | API key para Whisper API y OpenAI-compatible LLM |
+| `ZAI_API_KEY` | — | API key for z-ai-web-dev-sdk (LLM + image) |
+| `OPENAI_API_KEY` | — | API key for Whisper API and OpenAI-compatible LLMs |
 | `MINIMAX_API_KEY` | — | Minimax video generation |
 | `META_AI_API_KEY` | — | Meta Movie Gen |
 | `KLING_API_KEY` | — | Kling video |
 | `UDIO_API_KEY` | — | Udio soundtrack |
 | `SUNO_API_KEY` | — | Suno soundtrack |
 | `ELEVENLABS_API_KEY` | — | ElevenLabs voiceover + SFX |
-| `WHISPER_MODEL` | `base` | Modelo Whisper: tiny/base/small/medium/large-v3 |
-| `WHISPER_LANGUAGE` | `es` | Idioma de transcripción |
+| `WHISPER_MODEL` | `base` | Whisper model: tiny/base/small/medium/large-v3 |
+| `WHISPER_LANGUAGE` | `es` | Transcription language |
 | `PREDATOR_SAFETY__SAFETY_LEVEL` | `standard` | permissive / standard / strict |
 | `SPILBERGIAN_VOICE__COMMAND_MODE` | `wake_word` | continuous / wake_word / push_to_talk |
 | `SPILBERGIAN_YOUTUBE__DEFAULT_PRIVACY` | `private` | private / unlisted / public |
 
-### Configuración del canal de YouTube
+### YouTube channel configuration
 
-Edita `config/default.json`:
+Edit `config/default.json`:
 
 ```json
 "youtube": {
   "channelId": "UCxxxxxxxxxxxx",
-  "channelName": "Mi Canal de Cine IA",
+  "channelName": "My AI Cinema Channel",
   "defaultPrivacy": "private",
   "defaultTags": ["Spilbergian", "AI Director", "Predator Jungle v3"],
-  "defaultLanguage": "es",
+  "defaultLanguage": "en",
   "publishSchedule": {
     "frequency": "weekly",
     "preferredDay": "friday",
@@ -299,52 +304,52 @@ Edita `config/default.json`:
 }
 ```
 
-Y descarga tus credenciales OAuth desde Google Cloud Console a `data/youtube/credentials.json` (tipo "Desktop app").
+And download your OAuth credentials from Google Cloud Console to `data/youtube/credentials.json` (type "Desktop app").
 
 ---
 
-## 🚀 Guía rápida
+## 🚀 Quick Start
 
-### Crear un cortometraje desde texto
+### Create a short film from text
 
 ```bash
-# Cortometraje familiar en español, 60s
-spilbergian create "Un niño encuentra una vieja linterna en la playa que libera una pequeña galaxia" \
-  --format short --genre family --language es
+# Family short film in Spanish, 60s
+spilbergian create "A boy finds an old lantern on the beach that releases a tiny galaxy" \
+  --format short --genre family --language en
 
-# Con subida automática a YouTube
+# With automatic YouTube upload
 spilbergian create "..." --upload
 
-# Vertical (para Shorts/Reels)
+# Vertical (for Shorts/Reels)
 spilbergian create "..." --format vertical
 
-# Featurette de 3 minutos
+# 3-minute featurette
 spilbergian create "..." --format featurette --duration 180
 ```
 
-### Entrenar el modelo
+### Train the model
 
 ```bash
-# Entrenamiento completo (6 fases)
+# Full training (6 phases)
 spilbergian train --phase all
 
-# Solo la fase cinematográfica nueva
+# Only the new cinematic phase
 spilbergian train --phase cinematic --epochs 30
 
-# Solo la fase de style reward (RLHF-lite)
+# Only the style-reward phase (RLHF-lite)
 spilbergian train --phase style --epochs 20
 
-# Sembrar datasets built-in antes del primer entrenamiento
+# Seed built-in datasets before the first training run
 spilbergian train --seed-datasets --phase all
 ```
 
-### Estado del agente
+### Agent status
 
 ```bash
 spilbergian status
 ```
 
-Salida esperada:
+Expected output:
 
 ```
 ╔══════════════════════════════════════════════════════════════╗
@@ -366,37 +371,37 @@ Video providers:
 
 ---
 
-## 🎙 Modo voz con Whisper
+## 🎙 Voice Mode with Whisper
 
-Spilbergian escucha comandos de voz como alternativa a escribir.
+Spilbergian listens to voice commands as an alternative to typing.
 
-### Arranque
+### Startup
 
 ```bash
-# Modo wake word (default) — di "Spilbergian, ..." antes de cada comando
+# Wake-word mode (default) — say "Spilbergian, ..." before each command
 spilbergian voice
 
-# Modo continuo — transcribe todo
+# Continuous mode — transcribes everything
 spilbergian voice --mode continuous
 ```
 
-### Comandos de voz reconocidos
+### Recognized voice commands
 
-| Ejemplo de frase | Intención | Acción |
-|-------------------|-----------|--------|
-| *"Spilbergian, crea un video sobre un gato perdido en el espacio"* | `create_movie` | `createMovie("un gato perdido en el espacio")` |
-| *"Spilbergian, haz un cortometraje de un abuelo y su barco"* | `create_movie_short` | `createMovie(..., { format: 'short' })` |
-| *"Spilbergian, crea un vertical sobre recetas rápidas"* | `create_movie_vertical` | `createMovie(..., { format: 'vertical' })` |
-| *"Spilbergian, sube el último video a YouTube"* | `upload_youtube` | sube `currentProject` a YouTube |
-| *"Spilbergian, edita con CapCut el proyecto spilbergian-1234"* | `capcut_open` | abre el draft en CapCut Desktop |
-| *"Spilbergian, entrena el modelo"* | `train` | lanza `director.train()` |
-| *"Spilbergian, entrena la fase cinematic"* | `train_phase` | lanza `train({ phase: 'cinematic' })` |
-| *"Spilbergian, estado"* | `status` | imprime `director.status()` |
-| *"Spilbergian, para"* | `stop` | detiene el modo voz |
+| Example phrase | Intent | Action |
+|-----------------|--------|--------|
+| *"Spilbergian, create a video about a cat lost in space"* | `create_movie` | `createMovie("a cat lost in space")` |
+| *"Spilbergian, make a short film about a grandpa and his boat"* | `create_movie_short` | `createMovie(..., { format: 'short' })` |
+| *"Spilbergian, create a vertical about quick recipes"* | `create_movie_vertical` | `createMovie(..., { format: 'vertical' })` |
+| *"Spilbergian, upload the last video to YouTube"* | `upload_youtube` | uploads `currentProject` to YouTube |
+| *"Spilbergian, edit with CapCut the project spilbergian-1234"* | `capcut_open` | opens the draft in CapCut Desktop |
+| *"Spilbergian, train the model"* | `train` | launches `director.train()` |
+| *"Spilbergian, train the cinematic phase"* | `train_phase` | launches `train({ phase: 'cinematic' })` |
+| *"Spilbergian, status"* | `status` | prints `director.status()` |
+| *"Spilbergian, stop"* | `stop` | stops voice mode |
 
 ### Hotwords
 
-Las hotwords se configuran en `config/default.json` y se pasan a Whisper como prompt para mejorar la precisión de términos del dominio:
+Hotwords are configured in `config/default.json` and passed to Whisper as a prompt to improve accuracy on domain-specific terms:
 
 ```json
 "voice": {
@@ -409,45 +414,45 @@ Las hotwords se configuran en `config/default.json` y se pasan a Whisper como pr
 }
 ```
 
-### Sin API key de OpenAI
+### Without an OpenAI API key
 
-Si no tienes `OPENAI_API_KEY`, instala Whisper localmente:
+If you don't have an `OPENAI_API_KEY`, install Whisper locally:
 
 ```bash
-# Opción A: Whisper Python
+# Option A: Python Whisper
 pip install openai-whisper
-whisper --version  # verificar
+whisper --version  # verify
 
-# Opción B: whisper.cpp (mucho más rápido en CPU)
+# Option B: whisper.cpp (much faster on CPU)
 git clone https://github.com/ggerganov/whisper.cpp
 cd whisper.cpp && make
 ./models/download-ggml-model.sh base
 ./main --version
 ```
 
-Spilbergian detecta automáticamente cuál motor está disponible.
+Spilbergian automatically detects which engine is available.
 
 ---
 
-## 🎬 Pipeline cinematográfico
+## 🎬 Cinematic Pipeline
 
-El `MoviePipeline` ejecuta 6 fases secuenciales. Cada fase emite eventos que el CLI y la web usan para mostrar progreso.
+The `MoviePipeline` runs 6 sequential phases. Each phase emits events that the CLI and the web use to show progress.
 
-### Fase 1 — Plan
+### Phase 1 — Plan
 
 ```
 brief → CinematicBrain.plan() → MoviePlan
 ```
 
-Salida (`data/projects/<name>/plan.json`):
+Output (`data/projects/<name>/plan.json`):
 
 ```json
 {
   "id": "uuid",
-  "brief": "Un niño encuentra una vieja linterna...",
+  "brief": "A boy finds an old lantern...",
   "format": "short",
   "genre": "family",
-  "language": "es",
+  "language": "en",
   "durationSec": 60,
   "arc": [
     { "index": 0, "beat": "ordinary_world",        "tone": "calm_yearning" },
@@ -456,14 +461,14 @@ Salida (`data/projects/<name>/plan.json`):
     { "index": 4, "beat": "resolution_and_wonder", "tone": "transcendent_wonder" }
   ],
   "script": {
-    "title": "Crónica de Un niño encuentra una vieja",
+    "title": "Chronicle of A boy finds an old",
     "scenes": [
       {
         "scene_number": 1,
         "location": "small town — kitchen / porch",
         "time_of_day": "morning — soft warm light",
         "description": "We meet our protagonist...",
-        "voiceover": "Había una vez, en un lugar donde el tiempo parecía detenido...",
+        "voiceover": "Once, in a place where time seemed to stand still...",
         "tone": "calm_yearning",
         "duration_sec": 12
       },
@@ -482,104 +487,104 @@ Salida (`data/projects/<name>/plan.json`):
   ],
   "shotList": [ { "id": "shot_001", ... }, ... ],
   "renderPrompts": [ { "shotId": "shot_001", "prompt": "...", "durationSec": 6, ... } ],
-  "title": "Crónica de Un niño encuentra una vieja",
+  "title": "Chronicle of A boy finds an old",
   "description": "...",
   "tags": ["Spilbergian", "PREDATOR JUNGLE v3", ...],
   "thumbnailPrompt": "Close-up of protagonist face. Wide-eyed wonder..."
 }
 ```
 
-### Fase 2 — Render de video
+### Phase 2 — Video rendering
 
-`RenderQueue` lanza hasta `maxConcurrentRenders` (default 3) renders en paralelo a través de `VideoOrchestrator`. Cada plano se prueba primero en el provider de mayor prioridad; si falla, cae al siguiente.
+`RenderQueue` launches up to `maxConcurrentRenders` (default 3) renders in parallel through `VideoOrchestrator`. Each shot is tried first on the highest-priority provider; on failure it falls back to the next.
 
-Resultado: `data/projects/<name>/video/shot_001_<hash>.mp4`, `shot_002_<hash>.mp4`, …
+Result: `data/projects/<name>/video/shot_001_<hash>.mp4`, `shot_002_<hash>.mp4`, …
 
-### Fase 3 — Composición de audio
+### Phase 3 — Audio composition
 
-`AudioMixer` produce tres capas y las mezcla con ffmpeg:
+`AudioMixer` produces three layers and mixes them with ffmpeg:
 
-1. **Soundtrack** — Udio primero, Suno como fallback. Prompt: "Cinematic orchestral score in the style of John Williams…"
-2. **Voiceover** — ElevenLabs con perfiles de voz por tono (e.g., `narrator_warm` para wonder, `character_villain` para peril)
-3. **SFX** — ElevenLabs sound-effect API (truenos, campanas mágicas, rumores, etc.)
+1. **Soundtrack** — Udio first, Suno as fallback. Prompt: "Cinematic orchestral score in the style of John Williams…"
+2. **Voiceover** — ElevenLabs with voice profiles per tone (e.g., `narrator_warm` for wonder, `character_villain` for peril)
+3. **SFX** — ElevenLabs sound-effect API (thunder, magical chimes, rumbles, etc.)
 
-Salida: `data/projects/<name>/audio/final_mix.mp3`
+Output: `data/projects/<name>/audio/final_mix.mp3`
 
-### Fase 4 — Edición
+### Phase 4 — Editing
 
-`CapCutController.assemble()` produce el MP4 final mediante uno de tres backends:
+`CapCutController.assemble()` produces the final MP4 via one of three backends:
 
-- **capcut-cli** (preferido): renderiza el draft JSON headless
-- **capcut-draft**: copia el draft a la carpeta de CapCut Desktop para edición manual
-- **ffmpeg** (fallback garantizado): `TimelineAssembler` normaliza cada plano a 1920×1080/30fps, aplica color grade por tono, concatena con cross-dissolves y mezcla audio con side-chain compression
+- **capcut-cli** (preferred): renders the draft JSON headless
+- **capcut-draft**: copies the draft into the CapCut Desktop project folder for manual editing
+- **ffmpeg** (guaranteed fallback): `TimelineAssembler` normalizes each shot to 1920×1080/30fps, applies per-tone color grading, concatenates with cross-dissolves, and mixes audio with side-chain compression
 
-Salida: `data/projects/renders/<projectName>.mp4`
+Output: `data/projects/renders/<projectName>.mp4`
 
-### Fase 5 — Thumbnail
+### Phase 5 — Thumbnail
 
-`ThumbnailGenerator` genera un PNG 1280×720 con:
-- Imagen de fondo generada por cogview-3-plus (estilo wonder face)
-- Gradiente inferior oscuro para legibilidad del título
-- Título de la película en color ámbar (`#f4a261`)
+`ThumbnailGenerator` produces a 1280×720 PNG with:
+- Background image generated by cogview-3-plus (wonder-face style)
+- Dark gradient at the bottom for title legibility
+- Movie title in amber color (`#f4a261`)
 - Tagline "Spilbergian · PREDATOR JUNGLE v3"
 
-Salida: `data/projects/<name>/thumbnail.png`
+Output: `data/projects/<name>/thumbnail.png`
 
-### Fase 6 — Finalize
+### Phase 6 — Finalize
 
-Genera `manifest.json` con TODO el estado del proyecto (rutas, metadatos, scores de style adherence) para reproducibilidad y depuración.
+Generates `manifest.json` with the ENTIRE project state (paths, metadata, style-adherence scores) for reproducibility and debugging.
 
 ---
 
-## 🎥 Generación de video (Meta / Minimax / Kling / Runway / Pika)
+## 🎥 Video Generation (Meta / Minimax / Kling / Runway / Pika)
 
-Todos los providers implementan la misma interfaz:
+All providers implement the same interface:
 
 ```javascript
 class VideoGenerator {
   async generate(promptSpec, outPath) {
-    // 1. Si no hay API key, devuelve un placeholder
-    // 2. POST a /v1/.../generate → devuelve task_id
-    // 3. Poll /v1/.../status hasta que status=completed
+    // 1. If no API key, returns a placeholder
+    // 2. POST to /v1/.../generate → returns task_id
+    // 3. Poll /v1/.../status until status=completed
     // 4. Download video_url → outPath
     // 5. Return { path, cost, metadata }
   }
 }
 ```
 
-### Añadir un nuevo provider
+### Adding a new provider
 
-1. Crea `src/video/<MiProvider>VideoGenerator.js` extendiendo `VideoGenerator`
-2. Regístralo en `src/video/VideoOrchestrator.js` (`PROVIDER_CLASSES`)
-3. Añádelo a `config/default.json` → `video.providers`
+1. Create `src/video/<MyProvider>VideoGenerator.js` extending `VideoGenerator`
+2. Register it in `src/video/VideoOrchestrator.js` (`PROVIDER_CLASSES`)
+3. Add it to `config/default.json` → `video.providers`
 
-Ejemplo mínimo:
+Minimal example:
 
 ```javascript
 import { VideoGenerator } from './VideoGenerator.js';
 
-export class MiProviderVideoGenerator extends VideoGenerator {
+export class MyProviderVideoGenerator extends VideoGenerator {
   constructor(config) {
     super(config);
-    this.apiKey = process.env.MIPROVIDER_API_KEY;
+    this.apiKey = process.env.MYPROVIDER_API_KEY;
     this.endpoint = config.endpoint;
   }
 
   async generate(promptSpec, outPath) {
     if (!this.apiKey) return this.savePlaceholder(promptSpec, outPath);
     // ... POST + poll + download
-    return { path: outPath, cost: 0.1, metadata: { provider: 'miprovider' } };
+    return { path: outPath, cost: 0.1, metadata: { provider: 'myprovider' } };
   }
 }
 ```
 
 ---
 
-## 🎵 Generación de audio (Udio / Suno / ElevenLabs)
+## 🎵 Audio Generation (Udio / Suno / ElevenLabs)
 
 ### Soundtrack
 
-`AudioMixer._composeSoundtrack()` construye un prompt cinematográfico:
+`AudioMixer._composeSoundtrack()` builds a cinematic prompt:
 
 ```
 Cinematic orchestral score in the style of John Williams.
@@ -589,11 +594,11 @@ Instrumentation: strings, brass, woodwinds, subtle choir.
 Duration: 60 seconds. No vocals, no lyrics.
 ```
 
-Y lo envía a Udio. Si Udio falla (sin API key, rate limit, etc.), cae a Suno automáticamente.
+And sends it to Udio. If Udio fails (no API key, rate limit, etc.), it falls back to Suno automatically.
 
 ### Voiceover
 
-Cada escena con `voiceover` se sintetiza con ElevenLabs. El perfil de voz se selecciona según el tono:
+Each scene with a `voiceover` is synthesized with ElevenLabs. The voice profile is selected based on tone:
 
 ```javascript
 _voiceFor(scene) {
@@ -606,7 +611,7 @@ _voiceFor(scene) {
 
 ### SFX
 
-Los SFX se generan vía el endpoint `eleven-v3` de ElevenLabs:
+SFX are generated via the ElevenLabs `eleven-v3` sound-effect endpoint:
 
 ```javascript
 async generateSfx(prompt, outPath) {
@@ -615,11 +620,11 @@ async generateSfx(prompt, outPath) {
 }
 ```
 
-SFX son **opcionales** — si la generación falla, el pipeline continúa sin ellos.
+SFX are **optional** — if generation fails, the pipeline continues without them.
 
-### Mezcla final
+### Final mix
 
-ffmpeg con side-chain compression para que el narrador siempre se entienda por encima de la música:
+ffmpeg with side-chain compression so the narrator is always intelligible over the music:
 
 ```
 [0:a]volume=0.5[bg];
@@ -629,42 +634,42 @@ ffmpeg con side-chain compression para que el narrador siempre se entienda por e
 
 ---
 
-## ✂ Edición con CapCut
+## ✂ Editing with CapCut
 
-### Generación del Draft JSON
+### Generating the Draft JSON
 
-`CapCutDraftBuilder` produce un `draft_content.json` compatible con CapCut Desktop 3.x:
+`CapCutDraftBuilder` produces a `draft_content.json` compatible with CapCut Desktop 3.x:
 
 - **Tracks**: video (clips), voice (ElevenLabs VO), audio (soundtrack)
-- **Segments**: uno por plano, con `target_timerange` y `source_timerange`
-- **Transitions**: fade de 0.5s entre planos consecutivos
-- **Effects**: ajuste de color (brightness/saturation/temperature) según tono:
+- **Segments**: one per shot, with `target_timerange` and `source_timerange`
+- **Transitions**: 0.5s fade between consecutive shots
+- **Effects**: color adjustment (brightness/saturation/temperature) per tone:
   - `wide_eyed_wonder` / `transcendent_wonder` → +brightness +saturation +temperature (golden hour)
   - `desolation` → −brightness −saturation −temperature (cold steel blue)
   - `triumphant_peril` → +contrast +saturation +temperature (punchy warm)
-- **Keyframes**: slow push-in mediante keyframes de scale (1.0 → 1.08) en planos `slow_push_in`
+- **Keyframes**: slow push-in via scale keyframes (1.0 → 1.08) on `slow_push_in` shots
 
-### Abrir en CapCut Desktop
+### Opening in CapCut Desktop
 
 ```bash
-# Copia el draft a la carpeta de proyectos de CapCut Desktop
+# Copy the draft into the CapCut Desktop project folder
 spilbergian capcut open <projectName>
 ```
 
-En Windows: copia a `%USERPROFILE%/AppData/Local/CapCut/User Data/Projects/com.lveditor.draft/`
-En macOS: copia a `~/Library/Application Support/CapCut/User Data/Projects/com.lveditor.draft/`
+On Windows: copies to `%USERPROFILE%/AppData/Local/CapCut/User Data/Projects/com.lveditor.draft/`
+On macOS: copies to `~/Library/Application Support/CapCut/User Data/Projects/com.lveditor.draft/`
 
-Abre CapCut Desktop y verás el proyecto listo para editar manualmente.
+Open CapCut Desktop and you'll see the project ready to edit manually.
 
-### Render headless con CapCut CLI
+### Headless render with CapCut CLI
 
-Si tienes el binario `capcut` CLI (path configurado en `editor.capcut.capcutCliPath`):
+If you have the `capcut` CLI binary (path configured in `editor.capcut.capcutCliPath`):
 
 ```bash
 spilbergian capcut render <draft_path>
 ```
 
-Esto ejecuta:
+This executes:
 
 ```bash
 capcut render \
@@ -675,60 +680,60 @@ capcut render \
   --bitrate 8M
 ```
 
-### Fallback FFmpeg
+### FFmpeg fallback
 
-En Linux o sin CapCut CLI, `TimelineAssembler` produce un MP4 equivalente:
+On Linux or without CapCut CLI, `TimelineAssembler` produces an equivalent MP4:
 
-1. **Normalización por plano**: cada clip se re-encodea a 1920×1080, 30fps, yuv420p, con color grade por tono vía filtro `eq=`
-2. **Concatenación**: ffmpeg concat demuxer
-3. **Mezcla de audio**: amix con pesos 1.0 (video original) y 0.6 (mezcla audio generada)
+1. **Per-shot normalization**: each clip is re-encoded to 1920×1080, 30fps, yuv420p, with per-tone color grading via the `eq=` filter
+2. **Concatenation**: ffmpeg concat demuxer
+3. **Audio mixing**: amix with weights 1.0 (original video) and 0.6 (generated audio mix)
 
 ---
 
-## 📺 Publicación en YouTube
+## 📺 Publishing to YouTube
 
-### OAuth por primera vez
+### OAuth on first run
 
-1. Ve a https://console.cloud.google.com/apis/credentials
-2. Crea credenciales OAuth 2.0 tipo **Desktop app**
-3. Habilita **YouTube Data API v3**
-4. Descarga el JSON y guárdalo en `data/youtube/credentials.json`
-5. Ejecuta:
+1. Go to https://console.cloud.google.com/apis/credentials
+2. Create OAuth 2.0 credentials of type **Desktop app**
+3. Enable the **YouTube Data API v3**
+4. Download the JSON and save it to `data/youtube/credentials.json`
+5. Run:
 
 ```bash
 spilbergian youtube:auth
 ```
 
-Se abrirá el navegador, autorizas tu canal, y el token se guarda en `data/youtube/token.json`. Las siguientes veces no necesitas volver a autorizar.
+A browser window opens, you authorize your channel, and the token is saved to `data/youtube/token.json`. Subsequent runs don't need to re-authorize.
 
-### Subida manual
+### Manual upload
 
 ```bash
-spilbergian youtube:upload data/projects/renders/mi-pelicula.mp4 \
-  --title "Mi Película by Spilbergian" \
+spilbergian youtube:upload data/projects/renders/my-movie.mp4 \
+  --title "My Movie by Spilbergian" \
   --description "..." \
   --privacy private \
-  --thumbnail data/projects/mi-pelicula/thumbnail.png \
-  --tags "Spilbergian,AI Director,Cortometraje"
+  --thumbnail data/projects/my-movie/thumbnail.png \
+  --tags "Spilbergian,AI Director,Short film"
 ```
 
-### Subida automática dentro del pipeline
+### Automatic upload inside the pipeline
 
 ```bash
 spilbergian create "..." --upload
 ```
 
-El `SpilbergianDirector.createMovie()` llamará a `YouTubeUploader.upload()` al final con los metadatos autogenerados (título, descripción, tags, thumbnail).
+`SpilbergianDirector.createMovie()` will call `YouTubeUploader.upload()` at the end with the auto-generated metadata (title, description, tags, thumbnail).
 
-### Programación de publicaciones
+### Scheduling publications
 
 ```javascript
-import { SpilbergianDirector } from 'predator-jungle-agent';
+import { SpilbergianDirector } from 'splibergian';
 
 const director = new SpilbergianDirector();
 await director.init();
 
-// Sube el viernes a las 18:00 Europe/Madrid (configurable)
+// Upload on Friday at 18:00 Europe/Madrid (configurable)
 const result = await director.createMovie("...", {});
 await director.youtube.schedule(result.finalVideo, {
   title: result.title,
@@ -737,7 +742,7 @@ await director.youtube.schedule(result.finalVideo, {
 });
 ```
 
-### Listar últimos uploads
+### List recent uploads
 
 ```bash
 spilbergian youtube:list
@@ -745,58 +750,58 @@ spilbergian youtube:list
 
 ---
 
-## 🎓 Entrenamiento detallado
+## 🎓 Detailed Training
 
-El entrenamiento de Spilbergian consta de **6 fases**. Las 4 primeras heredan el pipeline PREDATOR v2.0; las dos últimas (V y VI) son nuevas en v3.0 y especializan al agente en tareas cinematográficas.
+Spilbergian's training consists of **6 phases**. The first four inherit the PREDATOR v2.0 pipeline; the last two (V and VI) are new in v3.0 and specialize the agent in cinematic tasks.
 
-### Fase I — Pre-entrenamiento a gran escala (default: 15 épocas)
+### Phase I — Large-scale pre-training (default: 15 epochs)
 
-El backbone `ANN-Psi` (12 capas: AJN + Transformer) se pre-entrena con un dataset grande de estímulos sintéticos para estabilizar las fases posteriores. Learning rate: cosine annealing desde `eta=0.05` hasta `etaMin=0.001`.
+The `ANN-Psi` backbone (12 layers: AJN + Transformer) is pre-trained with a large dataset of synthetic stimuli to stabilize later phases. Learning rate: cosine annealing from `eta=0.05` to `etaMin=0.001`.
 
 ```bash
 spilbergian train --phase I --epochs 15
 ```
 
-### Fase II — Siembra de adicción (3 sub-fases × 8 épocas)
+### Phase II — Addiction seeding (3 sub-phases × 8 epochs)
 
-Las neuronas AJN adquieren "adicción" a estímulos específicos en tres sub-fases:
+AJN neurons acquire "addiction" to specific stimuli across three sub-phases:
 
-| Sub-fase | Objetivo | Comportamiento |
-|----------|----------|----------------|
-| **II-T1** | Tolerance building | Aumenta el umbral θSat paulatinamente |
-| **II-T2** | Frustration hardening | Expande la covarianza para generar diversidad |
-| **II-T3** | Withdrawal cycle | Hace que la craving vuelva tras saturación |
+| Sub-phase | Goal | Behavior |
+|-----------|------|----------|
+| **II-T1** | Tolerance building | Gradually raises the θSat threshold |
+| **II-T2** | Frustration hardening | Expands covariance to generate diversity |
+| **II-T3** | Withdrawal cycle | Makes the craving return after saturation |
 
-### Fase III — Hierarchical fine-tuning (HIFT, 12 épocas)
+### Phase III — Hierarchical fine-tuning (HIFT, 12 epochs)
 
-Fine-tuning jerárquico: las capas superiores (conceptos, praxic assembly) reciben gradientes más fuertes que las inferiores (sensory encoding). Esto preserva la representación aprendida en Fase I mientras especializa el razonamiento.
+Hierarchical fine-tuning: the upper layers (concepts, praxic assembly) receive stronger gradients than the lower ones (sensory encoding). This preserves the representations learned in Phase I while specializing reasoning.
 
-### Fase IV — Adversarial frustration hardening (10 épocas)
+### Phase IV — Adversarial frustration hardening (10 epochs)
 
-Se inyectan estímulos adversarios diseñados para provocar extinciones en cadena. El Cascade Monitor aprende a detectar y auto-reparar estos casos. Mejora la resiliencia ante fallos reales.
+Adversarial stimuli designed to trigger cascade extinctions are injected. The Cascade Monitor learns to detect and self-heal these cases. Improves resilience to real-world failures.
 
-### Fase V — Cinematic fine-tuning (NUEVO v3.0, 20 épocas)
+### Phase V — Cinematic fine-tuning (NEW v3.0, 20 epochs)
 
-Esta es la fase que convierte a PREDATOR en **Spilbergian**. Para cada muestra del dataset `data/training/scenes/`:
+This is the phase that turns PREDATOR into **Spilbergian**. For each sample in the `data/training/scenes/` dataset:
 
-1. `CinematicBrain.plan(brief, opts)` genera un plan completo (script + storyboard + shots)
-2. `SpielbergPersona.styleAdherence(plan)` computa un score 0..1
-3. **Loss = 1 − adherence.score + penalizaciones estructurales** (sin título, menos de 3 planos, etc.)
-4. El backbone ajusta para minimizar esta loss
+1. `CinematicBrain.plan(brief, opts)` generates a full plan (script + storyboard + shots)
+2. `SpielbergPersona.styleAdherence(plan)` computes a 0..1 score
+3. **Loss = 1 − adherence.score + structural penalties** (no title, fewer than 3 shots, etc.)
+4. The backbone adjusts to minimize this loss
 
 ```bash
 spilbergian train --phase cinematic --epochs 30
 ```
 
-#### Formato del dataset
+#### Dataset format
 
-Cada muestra es un JSON en `data/training/scenes/`:
+Each sample is a JSON in `data/training/scenes/`:
 
 ```json
 [
   {
     "brief": "A lonely lighthouse keeper discovers a stranded mermaid at dawn.",
-    "opts": { "format": "short", "genre": "family", "language": "es" },
+    "opts": { "format": "short", "genre": "family", "language": "en" },
     "expected": {
       "tones": ["wide_eyed_wonder", "transcendent_wonder"],
       "minShots": 6
@@ -806,7 +811,7 @@ Cada muestra es un JSON en `data/training/scenes/`:
 ]
 ```
 
-Si no hay muestras, se usa un dataset built-in de 6 escenas (en `src/training/CinematicDatasetLoader.js`). Para sembrarlo en disco y editarlo:
+If no samples are present, a built-in dataset of 6 scenes is used (in `src/training/CinematicDatasetLoader.js`). To seed it on disk and edit it:
 
 ```bash
 spilbergian train --seed-datasets --phase all
@@ -814,30 +819,30 @@ ls data/training/scenes/
 # builtin_scenes.json
 ```
 
-### Fase VI — Style Reward (NUEVO v3.0, 15 épocas)
+### Phase VI — Style Reward (NEW v3.0, 15 epochs)
 
-Fase tipo **RLHF-lite**: el `StyleRewardModel` puntúa cada plan generado según:
+An **RLHF-lite** phase: the `StyleRewardModel` scores each generated plan on:
 
-| Factor | Peso | Cómo se mide |
-|--------|------|--------------|
-| `persona.styleAdherence()` | 60% | Score agregado (arc, signature shots, tone vocabulary, pacing) |
-| Diversidad de tonos | 15% | # de tonos distintos / 6 |
-| Consistencia de pacing | 10% | 1 − |cuts/min − default| / default |
-| Title keyword wonder | 15% | Título contiene "wonder", "esperanza", "viaje", etc. |
+| Factor | Weight | How it's measured |
+|--------|--------|-------------------|
+| `persona.styleAdherence()` | 60% | Aggregate score (arc, signature shots, tone vocabulary, pacing) |
+| Tone diversity | 15% | # of distinct tones / 6 |
+| Pacing consistency | 10% | 1 − |cuts/min − default| / default |
+| Title wonder keyword | 15% | Title contains "wonder", "hope", "journey", etc. |
 
-El reward promueve planes que se sientan más Spielberg y penaliza los genéricos. En una implementación completa, los gradientes del reward fluirían de vuelta al backbone; en este scaffold se loguean para trazabilidad.
+The reward promotes plans that feel more Spielberg and penalizes generic ones. In a full implementation the reward gradients would flow back into the backbone; in this scaffold they are logged for traceability.
 
 ```bash
 spilbergian train --phase style --epochs 20
 ```
 
-### Entrenamiento completo
+### Full training
 
 ```bash
 spilbergian train --phase all --seed-datasets
 ```
 
-Salida típica:
+Typical output:
 
 ```
 +-- Spilbergian Training Pipeline v3.0
@@ -863,36 +868,36 @@ Phase summaries:
   Phase VI-style-reward — epochs: 15  final reward=0.7823
 ```
 
-### Early stopping y checkpoints
+### Early stopping and checkpoints
 
-Heredados de v2.0:
+Inherited from v2.0:
 
-- `earlyStoppingPatience: 7` — si la loss no mejora en 7 épocas consecutivas, se detiene la fase
-- `enableCheckpoints: true` — se guarda un checkpoint al final de cada fase en `data/checkpoints/`
+- `earlyStoppingPatience: 7` — if loss doesn't improve for 7 consecutive epochs, the phase stops
+- `enableCheckpoints: true` — a checkpoint is saved at the end of each phase in `data/checkpoints/`
 
-### Aumentación de datos
+### Data augmentation
 
-| Tipo | Descripción |
+| Type | Description |
 |------|-------------|
-| `augmentScenes` | Inyecta ruido en los briefs (sinónimos, paráfrasis) |
-| `augmentAudio` | Cambia pitch/tempo de los samples de audio |
-| `augmentScripts` | Permuta el orden de escenas no críticas |
+| `augmentScenes` | Injects noise into briefs (synonyms, paraphrases) |
+| `augmentAudio` | Changes pitch/tempo of audio samples |
+| `augmentScripts` | Permutes the order of non-critical scenes |
 
 ---
 
-## 🛠 API programática
+## 🛠 Programmatic API
 
-### Uso básico
+### Basic usage
 
 ```javascript
-import { SpilbergianDirector } from 'predator-jungle-agent';
+import { SpilbergianDirector } from 'splibergian';
 
 const director = new SpilbergianDirector();
 await director.init();
 
 const result = await director.createMovie(
-  'Un niño encuentra una vieja linterna en la playa que libera una pequeña galaxia',
-  { format: 'short', genre: 'family', language: 'es' }
+  'A boy finds an old lantern on the beach that releases a tiny galaxy',
+  { format: 'short', genre: 'family', language: 'en' }
 );
 
 console.log(result.title);
@@ -900,7 +905,7 @@ console.log(result.finalVideo);
 console.log(`Style adherence: ${(result.styleAdherence.score * 100).toFixed(1)}%`);
 ```
 
-### Modo voz
+### Voice mode
 
 ```javascript
 const director = new SpilbergianDirector({ voice: { commandMode: 'wake_word' } });
@@ -913,7 +918,7 @@ director.on('project:complete', (p) => console.log('Movie ready:', p.result.fina
 await director.startVoiceMode();
 ```
 
-### Personalizar la persona
+### Customizing the persona
 
 ```javascript
 const director = new SpilbergianDirector({
@@ -929,7 +934,7 @@ const director = new SpilbergianDirector({
 });
 ```
 
-### Con plugins
+### With plugins
 
 ```javascript
 import { renderBudgetAlertPlugin, movieAuditPlugin } from './plugins/example-plugin.js';
@@ -939,40 +944,40 @@ director.plugins.use(renderBudgetAlertPlugin);
 director.plugins.use(movieAuditPlugin);
 ```
 
-### Acceso a bajo nivel
+### Low-level access
 
 ```javascript
-// Solo el cerebro cinematográfico (sin pipeline completo)
-const { CinematicBrain, SpielbergPersona } = require('predator-jungle-agent');
+// Only the cinematic brain (without the full pipeline)
+const { CinematicBrain, SpielbergPersona } = require('splibergian');
 const brain = new CinematicBrain(config, new SpielbergPersona(config.persona));
 const plan = await brain.plan('...', { format: 'short' });
 
-// Solo Whisper
-const { WhisperListener } = require('predator-jungle-agent');
-const listener = new WhisperListener({ whisper: { language: 'es' } });
+// Only Whisper
+const { WhisperListener } = require('splibergian');
+const listener = new WhisperListener({ whisper: { language: 'en' } });
 await listener.init();
 const text = await listener.transcribe('./audio.wav');
 ```
 
 ---
 
-## 🔌 Sistema de plugins
+## 🔌 Plugin System
 
-Hooks disponibles (v3.0 añade los dos últimos):
+Available hooks (v3.0 adds the last two):
 
-| Hook | Cancelable | Cuándo se dispara |
-|------|------------|-------------------|
-| `directiveReceived` | sí | Al recibir un comando de texto o voz |
-| `beforeStep` | sí | Antes de cada step del pipeline |
-| `afterStep` | no | Después de cada step |
-| `beforeRender` | sí | **NUEVO v3.0** — antes de renderizar cada plano |
-| `afterEmit` | no | Después de emitir cada praxis |
-| `taskComplete` | no | Al completar una tarea |
-| `movieComplete` | no | **NUEVO v3.0** — al completar una película |
-| `extinction` | no | En eventos de extinción AJN |
-| `trainingEpoch` | no | Al final de cada época de entrenamiento |
+| Hook | Cancelable | When it fires |
+|------|------------|---------------|
+| `directiveReceived` | yes | When a text or voice command is received |
+| `beforeStep` | yes | Before each pipeline step |
+| `afterStep` | no | After each pipeline step |
+| `beforeRender` | yes | **NEW v3.0** — before rendering each shot |
+| `afterEmit` | no | After emitting each praxis |
+| `taskComplete` | no | When a task completes |
+| `movieComplete` | no | **NEW v3.0** — when a movie completes |
+| `extinction` | no | On AJN extinction events |
+| `trainingEpoch` | no | At the end of each training epoch |
 
-Ejemplo de plugin:
+Example plugin:
 
 ```javascript
 export const myPlugin = {
@@ -982,7 +987,7 @@ export const myPlugin = {
   hooks: {
     beforeRender: async (payload) => {
       console.log(`About to render ${payload.shotId}`);
-      // Para cancelar: return { ...payload, _cancel: true };
+      // To cancel: return { ...payload, _cancel: true };
       return payload;
     },
     movieComplete: async (payload) => {
@@ -995,7 +1000,7 @@ export const myPlugin = {
 
 ---
 
-## 🐳 Despliegue con Docker
+## 🐳 Docker Deployment
 
 ### Build
 
@@ -1010,7 +1015,7 @@ docker run -it --rm \
   -v $(pwd)/data:/app/data \
   -v $(pwd)/config:/app/config:ro \
   --env-file .env \
-  spilbergian-v3 create "Un astronauta descubre una flor en Marte"
+  spilbergian-v3 create "An astronaut discovers a flower on Mars"
 ```
 
 ### Docker Compose
@@ -1019,7 +1024,7 @@ docker run -it --rm \
 docker-compose up -d
 ```
 
-Incluye profile `llm` para levantar Ollama como sidecar:
+Includes a `llm` profile to spin up Ollama as a sidecar:
 
 ```bash
 docker-compose --profile llm up
@@ -1027,34 +1032,34 @@ docker-compose --profile llm up
 
 ### Health check
 
-El Dockerfile incluye `HEALTHCHECK` que comprueba `http://localhost:3000/health`. Si levantas la web (`npm run web`), el endpoint estará disponible.
+The Dockerfile includes a `HEALTHCHECK` that pings `http://localhost:3000/health`. If you run the web (`npm run web`), the endpoint will be available.
 
 ---
 
-## 📚 Referencias teóricas
+## 📚 Theoretical References
 
-El framework AJN en el que se basa Spilbergian está definido en:
+The AJN framework that underpins Spilbergian is defined in:
 
 - Tapiador Garcia, J. (2024). *Agentic Theory: Definition of the Artificial Junky Neuron (AJN).* WALLERMAX-AI 2604.00012.
 - Tapiador Garcia, J. (2024). *Agentic Theory II: The AJN and ANN-Psi.* WALLERMAX-AI 2604.00013.
 - Tapiador Garcia, J. (2024). *Agentic Theory III: Stimulus Tensor Propagation.* WALLERMAX-AI 2604.00014.
 
-Las decisiones cinematográficas de la persona "Spilbergian" están inspiradas en el análisis público de la filmografía de Steven Spielberg, en particular:
+The cinematic decisions of the "Spilbergian" persona are inspired by public analyses of Steven Spielberg's filmography, in particular:
 
 - *Bordwell, D. & Thompson, K.* — Film Art: An Introduction
-- *Mott, D.* — The Style of Steven Spielberg (análisis visual)
-- *Kaminski, J.* (DP) — entrevistas sobre la fotografía de Spielberg
+- *Mott, D.* — The Style of Steven Spielberg (visual analysis)
+- *Kaminski, J.* (DP) — interviews about Spielberg's cinematography
 
 ---
 
-## 📄 Licencia
+## 📄 License
 
-MIT License — ver [LICENSE](LICENSE) para detalles.
+MIT License — see [LICENSE](LICENSE) for details.
 
-**v3.0 "Spilbergian" (c) 2024-2026. Basado en Agentic Theory por Justo Tapiador García (UA).**
+**v3.0 "Spilbergian" (c) 2024-2026. Based on Agentic Theory by Justo Tapiador García (UA).**
 
 ---
 
 <div align="center">
-<i>Spilbergian v3.0 — "Toda película merece terminar con un plano al cielo."</i>
+<i>Spilbergian v3.0 — "Every movie deserves to end with a shot of the sky."</i>
 </div>

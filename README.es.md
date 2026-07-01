@@ -17,7 +17,7 @@
 </div>
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/justo-tapiador/spilbergian/main/spilbergian-1.jpg" alt="Train me Please!"  width="512"/>
+<img src="https://github.com/user-attachments/assets/dce59cef-df12-4af9-87fd-ca7792e56ab6" alt="Spilbergian — AI Cinematic Director""  width="640"/>
 </div>
 ---
 

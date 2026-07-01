@@ -7,7 +7,7 @@
 
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-3.0.0-blue)](https://github.com/Justo-Tapiador/predator-jungle-agent)
+[![Version](https://img.shields.io/badge/version-3.0.0-blue)](https://github.com/Justo-Tapiador/splibergian)
 [![Codename](https://img.shields.io/badge/codename-Spilbergian-magenta)](#)
 
 ---
@@ -215,8 +215,8 @@ Audio capture via `sox`/`rec` (cross-platform) or `ffmpeg` as a fallback. Config
 ### Standard install
 
 ```bash
-git clone https://github.com/Justo-Tapiador/predator-jungle-agent.git
-cd predator-jungle-agent
+git clone https://github.com/Justo-Tapiador/splibergian.git
+cd splibergian
 git checkout v3.0        # if released as a branch/tag
 npm install
 cp .env.example .env     # edit with your API keys
@@ -728,7 +728,7 @@ spilbergian create "..." --upload
 ### Scheduling publications
 
 ```javascript
-import { SpilbergianDirector } from 'predator-jungle-agent';
+import { SpilbergianDirector } from 'splibergian';
 
 const director = new SpilbergianDirector();
 await director.init();
@@ -890,7 +890,7 @@ Inherited from v2.0:
 ### Basic usage
 
 ```javascript
-import { SpilbergianDirector } from 'predator-jungle-agent';
+import { SpilbergianDirector } from 'splibergian';
 
 const director = new SpilbergianDirector();
 await director.init();
@@ -948,12 +948,12 @@ director.plugins.use(movieAuditPlugin);
 
 ```javascript
 // Only the cinematic brain (without the full pipeline)
-const { CinematicBrain, SpielbergPersona } = require('predator-jungle-agent');
+const { CinematicBrain, SpielbergPersona } = require('splibergian');
 const brain = new CinematicBrain(config, new SpielbergPersona(config.persona));
 const plan = await brain.plan('...', { format: 'short' });
 
 // Only Whisper
-const { WhisperListener } = require('predator-jungle-agent');
+const { WhisperListener } = require('splibergian');
 const listener = new WhisperListener({ whisper: { language: 'en' } });
 await listener.init();
 const text = await listener.transcribe('./audio.wav');

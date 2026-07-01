@@ -1,5 +1,5 @@
 {
-  "name": "predator-jungle-agent",
+  "name": "splibergian",
   "version": "3.0.0",
   "description": "PREDATOR JUNGLE v3.0 'Spilbergian' — A Deep Agentic AI System specialized in autonomous cinematic video creation, built on the Artificial Junky Neuron (AJN) framework by Justo Tapiador García (UA). v3.0 integrates CapCut editing, Udio/Suno/ElevenLabs audio generation, Meta/Minimax video generation, Whisper voice commands, and YouTube publishing.",
   "main": "src/index.js",
@@ -58,7 +58,7 @@
   "author": {
     "name": "Based on Agentic Theory by Justo Tapiador García",
     "affiliation": "Universidad de Alicante (UA)",
-    "url": "https://github.com/Justo-Tapiador/predator-jungle-agent",
+    "url": "https://github.com/Justo-Tapiador/splibergian",
     "email": "justo.tapiador@gmail.com"
   },
   "license": "MIT",

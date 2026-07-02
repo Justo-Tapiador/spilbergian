@@ -251,7 +251,7 @@ docker-compose --profile llm up
 
 ---
 
-## o Configuration
+## ⚙ Configuration
 
 Configuration follows the **layered system** inherited from v2.0:
 

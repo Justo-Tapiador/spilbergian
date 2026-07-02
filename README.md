@@ -1,6 +1,4 @@
-# Spilbergian — A Cinematic AI Director *
-
-### Praxic Reinforcement and Extinction-Driven Agentic Task Orchestrator and Realizer — Cinematic Director Edition
+# Spilbergian — A Cinematic AI Director #
 
 > An autonomous cinematic AI agent built on the **Artificial Junky Neuron (AJN)** framework by **Justo Tapiador García (UA)**.
 > v3.0 transforms PREDATOR into a **virtual film director in the style of Steven Spielberg** that generates, edits, and publishes complete videos to YouTube without human intervention.

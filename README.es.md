@@ -42,9 +42,9 @@
 
 ---
 
-## 🆕 Novedades en v3.0
+## 🆕 EVolución hacia Spilbergian
 
-v3.0 es un **salto cualitativo** respecto a v2.0: PREDATOR deja de ser un agente genérico y se especializa como **director cinematográfico autónomo**. Las novedades se agrupan en cinco áreas:
+**Spilbergian** es un **salto cualitativo** respecto a v2.0: PREDATOR-JUBGLE deja de ser un agente genérico y se especializa como **director cinematográfico autónomo**. Las novedades se agrupan en cinco áreas:
 
 ### 1. Personalidad directiva — "Spilbergian"
 

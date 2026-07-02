@@ -29,7 +29,7 @@
 1. [What's New in v3.0](#-EVolution-Towards-Spilbergian)
 2. [Architecture](#-architecture)
 3. [Installation](#-installation)
-4. [Configuration](#-configuration)
+4. [Configuration](#configuration)
 5. [Quick Start](#-quick-start)
 6. [Voice Mode with Whisper](#-voice-mode-with-whisper)
 7. [Cinematic Pipeline](#-cinematic-pipeline)
@@ -251,7 +251,7 @@ docker-compose --profile llm up
 
 ---
 
-## ⚙️ Configuration
+## ⚙️Configuration
 
 Configuration follows the **layered system** inherited from v2.0:
 

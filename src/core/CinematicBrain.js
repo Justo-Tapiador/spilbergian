@@ -8,6 +8,7 @@
  * persona rules to every creative decision: pacing, color palette,
  * narrative beats, signature shots, and emotional tone.
  */
+import { EventEmitter } from 'eventemitter3';
 import { v4 as uuidv4 } from 'uuid';
 import { OpenAIAdapter } from '../llm/OpenAIAdapter.js';
 
@@ -19,8 +20,9 @@ const FORMAT_PRESETS = {
   documentary: { durationSec: 240, beats: 8, shotsPerBeat: 2 },
 };
 
-export class CinematicBrain {
+export class CinematicBrain extends EventEmitter {
   constructor(config, persona) {
+    super();
     this.config = config;
     this.persona = persona;
     this.llm = null;
@@ -32,6 +34,10 @@ export class CinematicBrain {
         maxTokens: config.llm.maxTokens,
       });
     }
+
+    // Allow listeners (e.g. the trainer, the pipeline, or UIs) to subscribe
+    // to planning progress events. The SpilbergianTrainer forwards epoch
+    // metrics through this brain instance.
   }
 
   /**
@@ -41,6 +47,7 @@ export class CinematicBrain {
    * @returns {Promise<MoviePlan>}
    */
   async plan(brief, opts = {}) {
+    this.emit('brain:plan_start', { brief, opts });
     const format = opts.format || 'short';
     const preset = FORMAT_PRESETS[format] || FORMAT_PRESETS.short;
     const durationSec = opts.targetDurationSec || preset.durationSec;
@@ -58,7 +65,7 @@ export class CinematicBrain {
     const tags = this._generateTags(script, genre);
     const thumbnailPrompt = this._buildThumbnailPrompt(script, storyboard);
 
-    return {
+    const plan = {
       id: uuidv4(),
       brief,
       format,
@@ -76,6 +83,8 @@ export class CinematicBrain {
       thumbnailPrompt,
       createdAt: new Date().toISOString(),
     };
+    this.emit('brain:plan_complete', { plan });
+    return plan;
   }
 
   // ─────────────────────────────────────────────────────────────────────

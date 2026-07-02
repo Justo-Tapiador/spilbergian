@@ -1,0 +1,68 @@
+# ─────────────────────────────────────────────────────────────────────
+# PREDATOR JUNGLE v3.0 "Spilbergian" — .gitignore
+# ─────────────────────────────────────────────────────────────────────
+
+# ── Runtime data (never commit generated assets, projects, or secrets) ──
+data/
+!data/.gitkeep
+
+# ── Environment & secrets ─────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+*.env
+credentials.json
+token.json
+client_secret*.json
+
+# ── Node.js ───────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+.pnpm-store/
+
+# ── Build & coverage ─────────────────────────────────────────────────
+dist/
+build/
+coverage/
+.nyc_output/
+*.lcov
+
+# ── Logs ──────────────────────────────────────────────────────────────
+logs/
+*.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# ── Editor / OS ───────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── CapCut / editor artifacts ─────────────────────────────────────────
+*.capcutdraft
+*.draft_content.json.bak
+
+# ── Models & caches ───────────────────────────────────────────────────
+.models/
+.cache/
+*.ckpt
+*.pt
+*.bin
+*.onnx
+whisper-models/
+
+# ── Test artefacts ────────────────────────────────────────────────────
+test-output/
+*.tmp
+*.bak

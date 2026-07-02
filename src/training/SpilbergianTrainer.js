@@ -97,8 +97,8 @@ export class SpilbergianTrainer extends EventEmitter {
           totalLoss += loss;
         }
         const avgLoss = totalLoss / Math.max(1, dataset.length);
-        this.brain?.emit?.('training:epoch', { phase: 'V', epoch, loss: avgLoss });
-        return { phase: 'V', epoch, loss: avgLoss, samples: dataset.length };
+        this.brain?.emit?.('training:epoch', { phase: 'V-cinematic', epoch, loss: avgLoss });
+        return { phase: 'V-cinematic', epoch, loss: avgLoss, samples: dataset.length };
       });
     }
 
@@ -115,8 +115,8 @@ export class SpilbergianTrainer extends EventEmitter {
           // here. We log the reward so it can be tracked over epochs.
         }
         const avgReward = totalReward / Math.max(1, dataset.length);
-        this.brain?.emit?.('training:epoch', { phase: 'VI', epoch, reward: avgReward });
-        return { phase: 'VI', epoch, reward: avgReward, samples: dataset.length };
+        this.brain?.emit?.('training:epoch', { phase: 'VI-style-reward', epoch, reward: avgReward });
+        return { phase: 'VI-style-reward', epoch, reward: avgReward, samples: dataset.length };
       });
     }
 

@@ -6,11 +6,19 @@
  *   spilbergian youtube:upload <video.mp4> --title "..." --description "..." --thumbnail thumb.png
  *   spilbergian youtube:auth        # First-time OAuth flow
  *   spilbergian youtube:list        # List recent uploads
+ *
+ * Configuration is loaded via config/loader.js so the uploader receives
+ * the same `youtube` block (credentialsFile, tokenFile, defaultTags,
+ * defaultPrivacy, publishSchedule, ...) that the rest of the agent uses.
  */
 import { Command } from 'commander';
 import chalk from 'chalk';
 import ora from 'ora';
-import { YouTubeUploader } from '../src/index.js';
+import { YouTubeUploader, loadConfig } from '../src/index.js';
+
+// Load layered config (default.json -> NODE_ENV.json -> .env -> env vars).
+const config = loadConfig();
+const ytConfig = config.youtube || {};
 
 const program = new Command();
 program
@@ -23,11 +31,11 @@ program
   .description('Upload a video to YouTube')
   .option('-t, --title <title>')
   .option('-d, --description <desc>')
-  .option('--privacy <privacy>', 'private | unlisted | public', 'private')
+  .option('--privacy <privacy>', 'private | unlisted | public', ytConfig.defaultPrivacy || 'private')
   .option('--thumbnail <path>')
   .option('--tags <tags>', 'Comma-separated tags')
   .action(async (file, opts) => {
-    const uploader = new YouTubeUploader();
+    const uploader = new YouTubeUploader(ytConfig);
     await uploader.init();
     const spin = ora('Uploading to YouTube...').start();
     uploader.on('youtube:upload_progress', ({ pct }) => {
@@ -52,7 +60,7 @@ program
   .command('auth')
   .description('Run OAuth consent flow')
   .action(async () => {
-    const uploader = new YouTubeUploader();
+    const uploader = new YouTubeUploader(ytConfig);
     await uploader.init();
     console.log(chalk.cyan('Starting OAuth flow...'));
     await uploader._ensureAuth();
@@ -63,7 +71,7 @@ program
   .command('list')
   .description('List recent uploads')
   .action(async () => {
-    const uploader = new YouTubeUploader();
+    const uploader = new YouTubeUploader(ytConfig);
     await uploader.init();
     const vids = await uploader.listRecent(10);
     if (!vids.length) {
@@ -72,7 +80,7 @@ program
     }
     console.log(chalk.cyan('\nRecent uploads:'));
     for (const v of vids) {
-      console.log(chalk.white(`  • ${v.title}  —  ${v.url}  —  ${v.publishedAt}`));
+      console.log(chalk.white(`  \u2022 ${v.title}  \u2014  ${v.url}  \u2014  ${v.publishedAt}`));
     }
   });
 

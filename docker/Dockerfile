@@ -44,6 +44,7 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY --from=builder /app/src ./src
 COPY --from=builder /app/scripts ./scripts
+COPY --from=builder /app/web ./web
 COPY --from=builder /app/config ./config
 COPY --from=builder /app/package.json ./
 COPY --from=builder /app/.env.example ./
@@ -62,7 +63,7 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=15s --retries=3 \
 
 EXPOSE 3000
 
-# Default entrypoint: start the CLI in status mode.
-# Override with: docker run spilbergian-v3 create "your brief"
-ENTRYPOINT ["node", "scripts/cli.js"]
-CMD ["status"]
+# Default: start the web control plane (serves /health for Docker healthcheck).
+# Override with: docker run spilbergian-v3 node scripts/cli.js create "your brief"
+ENTRYPOINT ["node"]
+CMD ["web/server.js"]

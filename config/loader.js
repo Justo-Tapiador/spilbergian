@@ -106,12 +106,9 @@ export function loadConfig(overrides = {}) {
   const envOverrides1 = envOverrides('PREDATOR_');
   const envOverrides2 = envOverrides('SPILBERGIAN_');
 
-  const merged = deepMerge(
-    defaults,
-    envConfig,
-    envOverrides1,
-    envOverrides2,
-    overrides
+  const merged = [defaults, envConfig, envOverrides1, envOverrides2, overrides].reduce(
+    (acc, layer) => deepMerge(acc, layer),
+    {},
   );
 
   return validateConfig(merged);

@@ -1,9 +1,0 @@
-{
-  "provider": "MinimaxVideoGenerator",
-  "prompt": "El astronauta Alex revisa su equipo, su reflejo en el casco distorsionado por el polvo rojo. Más allá de la ventana, el paisaje marciano se extiende en un silencio absoluto. (Shot 2/2: medium_shot static). Genre: sci-fi. Shot type: medium_shot. Camera: static. Lighting: natural_soft. Color grade: natural. Tone: innocence. Cinematic, photorealistic, 35mm film grain, anamorphic lens, Spielberg style, John Williams era composition",
-  "durationSec": 5,
-  "resolution": "1920x1080",
-  "fps": 30,
-  "generatedAt": "2026-07-01T10:28:40.023Z",
-  "note": "placeholder — no API key configured for this provider"
-}

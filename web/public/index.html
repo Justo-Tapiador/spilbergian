@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spilbergian — AI Cinematic Director</title>
+  <meta name="description" content="PREDATOR JUNGLE v3.0 — Control plane for the Spilbergian AI cinematic director." />
+  <link rel="icon" href="/public/spilbergian-1.png" />
+  <link rel="stylesheet" href="/public/styles.css" />
+</head>
+<body>
+  <!-- Animated film-grain / vignette overlay -->
+  <div class="vignette" aria-hidden="true"></div>
+
+  <!-- ───────────────── Top bar ───────────────── -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">🎬</span>
+      <div class="brand-text">
+        <h1>Spilbergian</h1>
+        <span class="tagline">PREDATOR JUNGLE v3.0 · AI Cinematic Director</span>
+      </div>
+    </div>
+    <nav class="topnav">
+      <a href="#dashboard" class="navlink active" data-tab="dashboard">Dashboard</a>
+      <a href="#plan" class="navlink" data-tab="plan">Plan</a>
+      <a href="#create" class="navlink" data-tab="create">Crear película</a>
+      <a href="#projects" class="navlink" data-tab="projects">Proyectos</a>
+      <a href="#training" class="navlink" data-tab="training">Entrenamiento</a>
+      <a href="#config" class="navlink" data-tab="config">Config</a>
+    </nav>
+    <div class="status-pill" id="status-pill" title="Estado del servidor">
+      <span class="dot" id="health-dot"></span>
+      <span id="health-label">conectando…</span>
+    </div>
+  </header>
+
+  <main class="content">
+
+    <!-- ─────────── Dashboard tab ─────────── -->
+    <section id="tab-dashboard" class="tab active">
+      <div class="grid">
+        <div class="card">
+          <h2>Estado del Director</h2>
+          <dl id="director-status" class="kv"><dt>Cargando…</dt><dd></dd></dl>
+        </div>
+        <div class="card">
+          <h2>Persona</h2>
+          <div id="persona-card"><p class="muted">Cargando…</p></div>
+        </div>
+        <div class="card">
+          <h2>Salud del sistema</h2>
+          <dl id="health-card" class="kv"><dt>Cargando…</dt><dd></dd></dl>
+        </div>
+        <div class="card">
+          <h2>Métricas</h2>
+          <dl id="metrics-card" class="kv"><dt>Cargando…</dt><dd></dd></dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────── Plan tab ─────────── -->
+    <section id="tab-plan" class="tab">
+      <div class="card">
+        <h2>Generar plan cinematográfico</h2>
+        <p class="muted">
+          Ejecuta <code>CinematicBrain.plan()</code> sin renderizar video.
+          Devuelve arco narrativo, guion, storyboard, lista de planos y prompts de render.
+        </p>
+        <form id="plan-form" class="form">
+          <label>
+            <span>Brief creativo</span>
+            <textarea id="plan-brief" rows="3" placeholder="Un farero solitario descubre una sirena varada al amanecer.">Un farero solitario descubre una sirena varada al amanecer.</textarea>
+          </label>
+          <div class="row">
+            <label>
+              <span>Formato</span>
+              <select id="plan-format">
+                <option value="short">Short (60s)</option>
+                <option value="featurette">Featurette (180s)</option>
+                <option value="trailer">Trailer (90s)</option>
+                <option value="vertical">Vertical (45s)</option>
+                <option value="documentary">Documental (240s)</option>
+              </select>
+            </label>
+            <label>
+              <span>Género</span>
+              <select id="plan-genre">
+                <option value="">(auto)</option>
+                <option value="adventure">Aventura</option>
+                <option value="sci-fi">Ciencia ficción</option>
+                <option value="family">Familiar</option>
+                <option value="wonder">Asombro</option>
+                <option value="historical_drama">Drama histórico</option>
+              </select>
+            </label>
+            <label>
+              <span>Idioma</span>
+              <select id="plan-language">
+                <option value="es">Español</option>
+                <option value="en">Inglés</option>
+              </select>
+            </label>
+          </div>
+          <button type="submit" class="btn primary" id="plan-btn">Generar plan</button>
+        </form>
+        <div id="plan-result" class="result" hidden></div>
+      </div>
+    </section>
+
+    <!-- ─────────── Create movie tab ─────────── -->
+    <section id="tab-create" class="tab">
+      <div class="card">
+        <h2>Crear película completa</h2>
+        <p class="muted">
+          ⚠️ Ejecuta el pipeline completo (plan → render video → audio → edición → thumbnail).
+          Puede tardar varios minutos.
+        </p>
+        <form id="movie-form" class="form">
+          <label>
+            <span>Brief creativo</span>
+            <textarea id="movie-brief" rows="3" placeholder="Dos hermanos encuentran un mapa viejo en el desván de su abuelo.">Dos hermanos encuentran un mapa viejo en el desván de su abuelo.</textarea>
+          </label>
+          <div class="row">
+            <label>
+              <span>Formato</span>
+              <select id="movie-format">
+                <option value="short">Short</option>
+                <option value="vertical">Vertical</option>
+                <option value="trailer">Trailer</option>
+              </select>
+            </label>
+            <label>
+              <span>Género</span>
+              <select id="movie-genre">
+                <option value="">(auto)</option>
+                <option value="adventure">Aventura</option>
+                <option value="sci-fi">Ciencia ficción</option>
+                <option value="family">Familiar</option>
+              </select>
+            </label>
+            <label>
+              <span>Nombre del proyecto</span>
+              <input type="text" id="movie-name" placeholder="mi-pelicula" />
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" id="movie-upload" />
+              <span>Subir a YouTube al terminar</span>
+            </label>
+          </div>
+          <button type="submit" class="btn danger" id="movie-btn">🎬 ¡ACTION!</button>
+        </form>
+        <div id="movie-result" class="result" hidden></div>
+      </div>
+    </section>
+
+    <!-- ─────────── Projects tab ─────────── -->
+    <section id="tab-projects" class="tab">
+      <div class="card">
+        <h2>Proyectos locales</h2>
+        <p class="muted">Proyectos en <code>data/projects/</code>.</p>
+        <button class="btn" id="refresh-projects">↻ Refrescar</button>
+        <div id="projects-list" class="projects-list"><p class="muted">Cargando…</p></div>
+      </div>
+    </section>
+
+    <!-- ─────────── Training tab ─────────── -->
+    <section id="tab-training" class="tab">
+      <div class="card">
+        <h2>Entrenamiento</h2>
+        <p class="muted">
+          Lanza un mini-entrenamiento del Director (1 epoch por fase por defecto).
+          Las 6 fases son: I (pre-training), II-T1/T2/T3 (addiction seeding),
+          III (HIFT), IV (adversarial), V (cinematic), VI (style reward).
+        </p>
+        <form id="train-form" class="form inline">
+          <label>
+            <span>Epochs por fase</span>
+            <input type="number" id="train-epochs" min="1" max="5" value="1" />
+          </label>
+          <label>
+            <span>Fase</span>
+            <select id="train-phase">
+              <option value="all">Todas</option>
+              <option value="cinematic">Solo cinemática (V)</option>
+              <option value="style">Solo estilo (VI)</option>
+            </select>
+          </label>
+          <button type="submit" class="btn primary" id="train-btn">Entrenar</button>
+        </form>
+        <div id="train-result" class="result" hidden></div>
+      </div>
+    </section>
+
+    <!-- ─────────── Config tab ─────────── -->
+    <section id="tab-config" class="tab">
+      <div class="card">
+        <h2>Configuración efectiva</h2>
+        <p class="muted">Configuración cargada (sin secrets). Vista de solo lectura.</p>
+        <pre id="config-output" class="json">Cargando…</pre>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ───────────────── Toast ───────────────── -->
+  <div id="toast" class="toast" hidden></div>
+
+  <footer class="footer">
+    <span>PREDATOR JUNGLE v3.0 — Spilbergian · AJN Framework · UA · MIT</span>
+    <span><a href="https://github.com/Justo-Tapiador/spilbergian" target="_blank" rel="noopener">GitHub</a></span>
+  </footer>
+
+  <script src="/public/app.js" defer></script>
+</body>
+</html>

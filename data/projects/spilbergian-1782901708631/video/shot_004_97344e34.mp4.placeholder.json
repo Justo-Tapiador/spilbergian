@@ -1,9 +1,0 @@
-{
-  "provider": "MinimaxVideoGenerator",
-  "prompt": "Alex sale de la base, su traje espacial resplandece con luz ámbar mientras camina por el terreno áspero. La Tierra brilla débilmente en el cielo crepuscular. (Shot 2/2: medium_shot static). Genre: sci-fi. Shot type: medium_shot. Camera: static. Lighting: natural_soft. Color grade: natural. Tone: destiny. Cinematic, photorealistic, 35mm film grain, anamorphic lens, Spielberg style, John Williams era composition",
-  "durationSec": 6,
-  "resolution": "1920x1080",
-  "fps": 30,
-  "generatedAt": "2026-07-01T10:28:40.024Z",
-  "note": "placeholder — no API key configured for this provider"
-}

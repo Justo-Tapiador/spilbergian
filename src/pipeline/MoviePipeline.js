@@ -56,12 +56,17 @@ export class MoviePipeline extends EventEmitter {
     ];
 
     const ctx = { project, plan: null, videoClips: [], audioTracks: {}, finalVideo: null, thumbnailPath: null };
-    for (const [name, fn] of phases) {
+    for (let i = 0; i < phases.length; i++) {
+      const [name, fn] = phases[i];
       this.emit('pipeline:phase', { phase: name, project: project.id });
       const timerId = this.metrics?.startTimer?.(`pipeline_${name}`);
       await fn(ctx);
       if (timerId) this.metrics?.stopTimer?.(timerId);
-      this.emit('pipeline:progress', { phase: name, project: project.id, progress: phases.indexOf([name, fn]) / phases.length });
+      this.emit('pipeline:progress', {
+        phase: name,
+        project: project.id,
+        progress: (i + 1) / phases.length,
+      });
     }
     return this._buildMovieRecord(ctx);
   }

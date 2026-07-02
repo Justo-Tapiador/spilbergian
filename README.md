@@ -26,7 +26,7 @@
 
 ## 📑 Table of Contents
 
-1. [What's New in v3.0](#-whats-new-in-v30)
+1. [What's New in v3.0](#-EVolution Towards Spilbergian)
 2. [Architecture](#-architecture)
 3. [Installation](#-installation)
 4. [Configuration](#-configuration)

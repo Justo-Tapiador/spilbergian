@@ -2,12 +2,41 @@
   "name": "spilbergian",
   "version": "3.0.0",
   "description": "PREDATOR JUNGLE v3.0 'Spilbergian' — A Deep Agentic AI System specialized in autonomous cinematic video creation, built on the Artificial Junky Neuron (AJN) framework by Justo Tapiador García (UA). v3.0 integrates CapCut editing, Udio/Suno/ElevenLabs audio generation, Meta/Minimax video generation, Whisper voice commands, and YouTube publishing.",
+  "keywords": [
+    "ai","artificial-intelligence","agentic-ai","junky-neuron","AJN",
+    "deep-agentic-flow","autonomous-agent","reinforcement-learning",
+    "predator","spilbergian","spielberg","video-generation","youtube-automation",
+    "capcut","udio","suno","elevenlabs","minimax","meta-movie-gen",
+    "whisper","cinematic-ai","movie-director","creative-ai"
+  ],
+  "homepage": "https://github.com/Justo-Tapiador/spilbergian#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Justo-Tapiador/spilbergian.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Justo-Tapiador/spilbergian/issues",
+    "email": "justo.tapiador@gmail.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Justo Tapiador García",
+    "email": "justo.tapiador@gmail.com",
+    "url": "https://github.com/Justo-Tapiador"
+  },
+  "contributors": [
+    { "name": "Universidad de Alicante (UA)", "url": "https://www.ua.es" }
+  ],
   "main": "src/index.js",
   "type": "module",
   "bin": {
     "spilbergian": "./scripts/cli.js",
     "predator": "./scripts/cli.js"
   },
+  "files": [
+    "src/","scripts/","config/","web/","plugins/",
+    "README.md","LICENSE",".env.example"
+  ],
   "scripts": {
     "start": "node src/index.js",
     "dev": "node --watch src/index.js",
@@ -28,63 +57,22 @@
     "youtube:upload": "node scripts/youtube-upload.js",
     "youtube:auth": "node scripts/youtube-upload.js --auth",
     "docker:build": "docker build -t spilbergian-v3 -f docker/Dockerfile .",
-    "docker:run": "docker run -p 3000:3000 -v $(pwd)/data:/app/data --env-file .env spilbergian-v3"
+    "docker:run": "docker run -p 3000:3000 -v $(pwd)/data:/app/data --env-file .env spilbergian-v3",
+    "prepublishOnly": "npm test"
   },
-  "keywords": [
-    "ai",
-    "artificial-intelligence",
-    "agentic-ai",
-    "junky-neuron",
-    "AJN",
-    "deep-agentic-flow",
-    "autonomous-agent",
-    "reinforcement-learning",
-    "predator",
-    "spilbergian",
-    "spielberg",
-    "video-generation",
-    "youtube-automation",
-    "capcut",
-    "udio",
-    "suno",
-    "elevenlabs",
-    "minimax",
-    "meta-movie-gen",
-    "whisper",
-    "cinematic-ai",
-    "movie-director",
-    "creative-ai"
-  ],
-  "author": {
-    "name": "Based on Agentic Theory by Justo Tapiador García",
-    "affiliation": "Universidad de Alicante (UA)",
-    "url": "https://github.com/Justo-Tapiador/spilbergian",
-    "email": "justo.tapiador@gmail.com"
-  },
-  "license": "MIT",
   "dependencies": {
-    "commander": "^12.0.0",
-    "chalk": "^5.3.0",
-    "ora": "^8.0.1",
-    "express": "^4.18.3",
-    "uuid": "^9.0.0",
-    "eventemitter3": "^5.0.1",
-    "dotenv": "^16.4.5",
-    "axios": "^1.6.8",
-    "zod": "^3.23.0",
-    "z-ai-web-dev-sdk": "latest",
-    "googleapis": "^144.0.0",
-    "form-data": "^4.0.2",
-    "sharp": "^0.33.5"
+    "commander": "^12.0.0","chalk": "^5.3.0","ora": "^8.0.1",
+    "express": "^4.18.3","uuid": "^9.0.0","eventemitter3": "^5.0.1",
+    "dotenv": "^16.4.5","axios": "^1.6.8","zod": "^3.23.0",
+    "z-ai-web-dev-sdk": "latest","googleapis": "^144.0.0",
+    "form-data": "^4.0.2","sharp": "^0.33.5"
   },
   "devDependencies": {
-    "jest": "^29.7.0",
-    "eslint": "^8.57.0"
+    "jest": "^29.7.0","eslint": "^8.57.0"
   },
   "optionalDependencies": {
     "better-sqlite3": "^11.8.0"
   },
-  "engines": {
-    "node": ">=18.0.0"
-  }
+  "engines": { "node": ">=18.0.0" },
+  "publishConfig": { "access": "public", "provenance": false }
 }

@@ -1,4 +1,4 @@
-# PREDATOR JUNGLE v3.0 — *"Spilbergian"*
+# Spilbergian — A Cinematic AI Director *
 
 ### Praxic Reinforcement and Extinction-Driven Agentic Task Orchestrator and Realizer — Cinematic Director Edition
 
@@ -13,7 +13,6 @@
 ---
 
 <div align="center">
-<h1>Spilbergian — AI Cinematic Director </h1>
 <h2>🎬 Spilbergian doesn't just create videos — it directs them.🎬</h2>
 
 <i>It thinks in shots, in beats, in emotions. Its single goal is to make the audience feel something — and to make them feel it the way Spielberg would have filmed it.</i>

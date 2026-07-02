@@ -1,6 +1,4 @@
-# PREDATOR JUNGLE v3.0 — *"Spilbergian"*
-
-### Praxic Reinforcement and Extinction-Driven Agentic Task Orchestrator and Realizer — Cinematic Director Edition
+# SPILBERGIAN - IA Directora de Cine
 
 > Un agente de IA cinematográfico autónomo construido sobre el framework **Artificial Junky Neuron (AJN)** por **Justo Tapiador García (UA)**.
 > v3.0 transforma a PREDATOR en un **director de cine virtual estilo Steven Spielberg** que genera, edita y publica videos completos en YouTube sin intervención humana.

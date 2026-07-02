@@ -46,9 +46,9 @@
 
 ---
 
-## 🆕 What's New in v3.0
+## 🆕 EVolution Towards Spilbergian
 
-v3.0 is a **qualitative leap** over v2.0: PREDATOR ceases to be a generic agent and specializes as an **autonomous film director**. The new features are grouped into five areas:
+**Spilbergian** is a **qualitative leap** over v2.0: PREDATO-JUNGLE ceases to be a generic agent and specializes as an **autonomous film director**. The new features are grouped into five areas:
 
 ### 1. Directorial Persona — "Spilbergian"
 

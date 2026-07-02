@@ -19,10 +19,14 @@ export class OpenAIAdapter {
 
   async _ensureSdk() {
     if (this._sdkClient) return this._sdkClient;
+    if (!this.apiKey) return false;
     try {
       const mod = await import('z-ai-web-dev-sdk');
       const ZAI = mod.default || mod.ZAI || mod;
-      this._sdkClient = await ZAI.create();
+      this._sdkClient =  await Promise.race([
+        createP,
+        new Promise((resolve) => setTimeout(() => resolve(false), 3000)),
+      ]);
     } catch {
       this._sdkClient = false; // mark unavailable
     }

@@ -57,8 +57,9 @@ let _director = null;
 async function getDirector() {
   if (!_director) {
     const opts = {};
-    // Allow disabling LLM calls from the web UI (useful for offline demos).
-    if ((process.env.SPILBERGIAN_LLM || '').toLowerCase() === 'none') {
+    const llmMode = (process.env.SPILBERGIAN_LLM || '').toLowerCase();
+    const hasApiKey = !!(process.env.OPENAI_API_KEY || process.env.ZAI_API_KEY);
+    if (llmMode === 'none' || !hasApiKey) {
       opts.llm = { provider: 'none' };
     }
     _director = new SpilbergianDirector(opts);

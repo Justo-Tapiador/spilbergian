@@ -46,7 +46,7 @@
 
 ---
 
-## 🆕 EVolution Towards Spilbergian
+## 🆕 What's New in v3.0. Evolution Towards Spilbergian
 
 **Spilbergian** is a **qualitative leap** over v2.0: PREDATO-JUNGLE ceases to be a generic agent and specializes as an **autonomous film director**. The new features are grouped into five areas:
 
